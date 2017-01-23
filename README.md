@@ -74,8 +74,6 @@ one:
 
   [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
 
-and another:
-
   
 
 # Pandoc
@@ -88,20 +86,20 @@ and another:
 ## An example
 
 	---
-	title: Test Document
-	author: Dylan Storey 
-	date: November 23rd 2015
+	title: My Awesome Paper
+	author: Ford Prefect
+	date: November 20, 2019
 	bibliography: bibliography.bib
 	csl: science.csl
 	---
 
 	# Introduction
 
-	This is a fact that has evidence [@Meier-Kolthoff2013].
+	Here is a citation of my previous work [@Prefect-2015].
 
 To compile:
 
-	pandoc -S -o document.docx --filter pandoc-citeproc test.AMd
+	pandoc -S -o mydoc.docx --filter pandoc-citeproc test.md
 
 # LaTeX
 
