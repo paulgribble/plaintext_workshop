@@ -1,3 +1,5 @@
+*caution: in progress*
+
 # plaintext_workshop
 
 A workshop on Scientific Writing using plaintext tools like LaTeX,
