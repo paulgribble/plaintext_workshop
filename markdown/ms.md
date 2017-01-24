@@ -13,9 +13,9 @@ bibliography: refs.bib
 csl: /Users/plg/github/styles/the-journal-of-neuroscience.csl
 papersize: letter
 mainfont: "Palatino"
-fontsize: 11pt
+fontsize: 12pt
 linestretch: 1.5
-geometry: margin=1.2in
+geometry: margin=1.0in
 ---
 
 # Abstract
@@ -785,7 +785,6 @@ primary motor cortex; S1, primary somatosensory cortex; SPL, superior
 parietal lobule; FC, functional connectivity. {#tbl:clusters}
 
 \newpage
-\singlespace
 
 # References
 
