@@ -80,6 +80,10 @@ one:
 - [Pandoc Demos](http://pandoc.org/demos.html)
 - [Pandoc FAQs](http://pandoc.org/faqs.html)
 - [Pandoc Manual](http://pandoc.org/MANUAL.html)
+- [Pandoc crossref](https://github.com/lierdakil/pandoc-crossref) for
+  numbering figures, equations, tables and cross-references to them
+- [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc) for
+  citations & bibliographies
 
 ## LaTeX
 
@@ -94,10 +98,6 @@ one:
 With pandoc you can take advantage of both. Provide pandoc with a
 LaTeX template, containing all of the formatting details you want, and
 keep the content in Markdown format.
-
-
-
-
 
 
 
