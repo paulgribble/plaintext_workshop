@@ -1,7 +1,21 @@
 ---
-title: Resting-state Functional Connectivity in Sensory and Motor Networks Predicts Individual Differences in Motor Learning by Observing
-author: Heather R. McGregor & Paul L. Gribble
+title: Resting-state Functional Connectivity in Sensory and Motor Networks
+	   Predicts Individual Differences in Motor Learning by Observing
+author: 
+- Heather R. McGregor^1,3^
+- Paul L. Gribble^1,2,3^
+institute: 
+- ^1^ Brain and Mind Institute, Dept. Psychology, University of Western Ontario
+- ^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine & Dentistry, University of Western Ontario
+- ^3^ Graduate Program in Neuroscience, University of Western Ontario
 date: January 24, 2017
+bibliography: refs.bib
+csl: /Users/plg/github/styles/the-journal-of-neuroscience.csl
+papersize: letter
+mainfont: "Palatino"
+fontsize: 11pt
+linestretch: 1.5
+geometry: margin=1.2in
 ---
 
 # Abstract
@@ -25,65 +39,66 @@ positively correlated with behavioral measures of post-observation
 motor learning. Sensory-motor resting-state FC thus predicts the
 extent to which observation will promote subsequent motor learning.
 
+\newpage
+
 # Introduction
 
 Recent work has shown that action observation can promote motor
 learning. For example, individuals can learn how to reach in novel
 robot-imposed force field (FF) environments by observing the movements
-of a tutor (Mattar & Gribble, 2005). Subjects observed a video of a
-tutor adapting his reaches to a novel robot-imposed FF
-applied. Subjects who later performed reaches in the same FF as what
-they had observed showed a benefit, performing better (straighter)
-reaches compared to subjects who did not observe. Subjects who later
-performed reaches in the opposite FF to what they had observed
-performed worse (more curved) reaches than subjects who did not
-observe. While these results demonstrate that FFs can be partially
-learned from observation, there is considerable inter-individual
-variability in the extent to which observation promotes motor
-learning. Little is known about why this may be. It is feasible that
-some subjects are more predisposed to learning from observation than
-others—whether from birth, from experience-dependent plasticity, or a
-combination of these or other individual differences. Here we test the
-idea that inter-individual differences in brain function or structure
-can predict the extent to which observation promotes subsequent motor
-learning.
+of a tutor [@Mattar:2005aa]. Subjects observed a video of a tutor
+adapting his reaches to a novel robot-imposed FF applied. Subjects who
+later performed reaches in the same FF as what they had observed
+showed a benefit, performing better (straighter) reaches compared to
+subjects who did not observe. Subjects who later performed reaches in
+the opposite FF to what they had observed performed worse (more
+curved) reaches than subjects who did not observe. While these results
+demonstrate that FFs can be partially learned from observation, there
+is considerable inter-individual variability in the extent to which
+observation promotes motor learning. Little is known about why this
+may be. It is feasible that some subjects are more predisposed to
+learning from observation than others—whether from birth, from
+experience-dependent plasticity, or a combination of these or other
+individual differences. Here we test the idea that inter-individual
+differences in brain function or structure can predict the extent to
+which observation promotes subsequent motor learning.
 
-In a recent review article, Zatorre (2013) discusses findings showing
+In a recent review article, @Zatorre:2013aa discusses findings showing
 how baseline structural and functional neural connectivity patterns
 predict individual differences in musical training and speech
 learning.  Other studies have shown similar predictability for a wide
-array of cognitive abilities including executive function (Barnes et
-al., 2014; Reinberg et al., 2015), reading (Koyama et al., 2011; Wang
-et al., 2013), second language acquisition (Chai et al., 2016), visual
-perceptual discrimination (Baldessarre et al., 2012) and memory recall
-(King et al., 2015). In the motor domain, recent work has examined the
+array of cognitive abilities including executive function
+[@Barnes:2014aa; @Reineberg:2015aa], reading [@Koyama:2011aa;
+@Wang:2013aa], second language acquisition [@Chai:2016aa], visual
+perceptual discrimination [@Baldassarre:2012aa] and memory recall
+[@King:2015aa]. In the motor domain, recent work has examined the
 neural correlates of inter-individual variability in the ability of
 healthy adults to learn new motor skills through physical practice.
-Tomassini and colleagues (2011) demonstrated that inter-individual
-differences in both functional and structural MRI measures correlate
-with the acquisition of a novel visuomotor tracking skill. Greater
-task-based functional activation in a network involving prefrontal,
-premotor, and parietal cortices, as well as basal ganglia and the
-cerebellum was associated with higher behavioral measures of active
-motor learning. Structural differences within the premotor cortex,
-higher order visual areas, and the cerebellum were also positively
-correlated with learning abilities (Tomassini et al.,
-2011). Similarly, using dense-array EEG, Wu and colleagues (2014)
-showed that resting-state functional connectivity (FC) between
-premotor, primary motor and parietal cortices could predict individual
-differences in the subsequent learning of a visuomotor tracking
-task. Together, these studies suggest that functional and structural
-variations in motor learning-related brain networks can, in part,
-explain individual differences in active motor learning ability. The
-results of these studies raise the possibility that inter-individual
-differences in brain structure or function may also predict motor
-learning by observing.
+@Tomassini:2011aa demonstrated that inter-individual differences in
+both functional and structural MRI measures correlate with the
+acquisition of a novel visuomotor tracking skill. Greater task-based
+functional activation in a network involving prefrontal, premotor, and
+parietal cortices, as well as basal ganglia and the cerebellum was
+associated with higher behavioral measures of active motor
+learning. Structural differences within the premotor cortex, higher
+order visual areas, and the cerebellum were also positively correlated
+with learning abilities [@Tomassini:2011aa]. Similarly, using
+dense-array EEG, @Wu:2014aa showed that resting-state functional
+connectivity (FC) between premotor, primary motor and parietal
+cortices could predict individual differences in the subsequent
+learning of a visuomotor tracking task. Together, these studies
+suggest that functional and structural variations in motor
+learning-related brain networks can, in part, explain individual
+differences in active motor learning ability. The results of these
+studies raise the possibility that inter-individual differences in
+brain structure or function may also predict motor learning by
+observing.
 
 Here we tested the hypothesis that inter-individual differences in
 brain function or structure can predict the extent to which
 individuals will learn to perform a novel sensory-motor task (FF
-reaching) from observation. Based on our previous work (McGregor &
-Gribble, 2015; McGregor et al., 2016), we expected that
+reaching) from observation. Based on our previous work
+[@McGregor:2015aa; @McGregor:2016aa], we expected that
 inter-individual differences in brain function and structure within
 visual and sensory-motor brain networks would be predictive of motor
 learning by observing. On day 1, subjects performed baseline (no FF)
@@ -206,8 +221,8 @@ session identical to the day 1 fMRI scan session. Data from the second
 fMRI scan session were not used in any of the analyses presented here
 since the main objective of the current study was predicting motor
 learning by observing based on pre-learning (day 1) neuroimaging
-data. See McGregor and Gribble (2015) for details of FC changes
-following motor learning by observing.
+data. See @McGregor:2015aa for details of FC changes following motor
+learning by observing.
 
 We assessed motor learning behaviorally by having subjects perform
 reaches in the opposite FF to what was learned. The better subjects
@@ -217,18 +232,18 @@ during observation, subjects learn the compensatory pattern of muscle
 forces (i.e., rightward compensation) that is required to counteract
 the left FF. Subjects continue to use a learned pattern of muscle
 forces even when the force environment is unexpectedly changed,
-resulting in after-effects (e.g., Shadmehr & Mussa-Ivaldi, 1994). As
-is the case in this study, after-effects are especially large if the
-environment is changed such that it is the opposite of the learned
-environment. This is because the subject compensates rightward
-(persistence of the learned pattern of muscle forces) and the robotic
-arm also pushes the hand to the right. Therefore, we expected that
-those subjects who better learned the observed left FF would perform
-highly curved reaches when first exposed to the final right FF (Brown
-et al., 2009; Cothros et al., 2006; McGregor & Gribble, 2015; McGregor
-et al., 2016). We chose to use an interference paradigm to assess
-motor learning by observing because it tends to be a more sensitive
-measure compared testing subjects in the same FF that they observed.
+resulting in after-effects [e.g., @Shadmehr:1994aa]. As is the case in
+this study, after-effects are especially large if the environment is
+changed such that it is the opposite of the learned environment. This
+is because the subject compensates rightward (persistence of the
+learned pattern of muscle forces) and the robotic arm also pushes the
+hand to the right. Therefore, we expected that those subjects who
+better learned the observed left FF would perform highly curved
+reaches when first exposed to the final right FF [@Brown:2009aa;
+@Cothros:2006aa; @McGregor:2015aa; @McGregor:2016aa]. We chose to use
+an interference paradigm to assess motor learning by observing because
+it tends to be a more sensitive measure compared testing subjects in
+the same FF that they observed.
 
 The overall aim of this study was to assess if pre-learning
 resting-state functional connectivity can predict the extent to which
@@ -268,9 +283,9 @@ scrambled versions of the video clips in which only the start and
 target positions remained in their original locations. Scrambling the
 videos allowed us to preserve the low-level motion features such as
 movement direction and velocity while removing such movement features
-as shoulder and elbow joint rotations and the hand path (Malfait et
-al., 2010).  During the action observation network localizer task,
-subjects were instructed to count the number of correctly-timed
+as shoulder and elbow joint rotations and the hand path
+[@Malfait:2010aa].  During the action observation network localizer
+task, subjects were instructed to count the number of correctly-timed
 movements the tutor performed and to report the final tally to the
 experimenter at the end of the video. This was done to verify that
 subjects attended to the video. Reported tallies were not incorporated
@@ -302,7 +317,7 @@ Positional data were low-pass filtered at 40 Hz. The start and end of
 each trial were defined using a threshold of 5% of the peak tangential
 hand velocity. Movement curvature was quantified for each trial as the
 maximum perpendicular deviation of the hand (PD) from a line
-connecting the start and target locations (Mattar & Gribble, 2005).
+connecting the start and target locations [@Mattar:2005aa].
 
 We calculated a behavioral motor learning by observing score for each
 subject. Motor learning by observing scores were calculated as the
@@ -311,11 +326,10 @@ the last 50 reaches in the baseline null field. This approach allowed
 us to examine the extent to which observing the left FF interfered
 with learning subjects' initial performance in the right FF compared
 to control subjects who did not observe the tutor undergoing
-learning. As in our previous work (Brown et al., 2009; Cothros et al.,
-2006; McGregor et al., 2016), we expected that motor learning by
-observing would affect initial performance in the right FF, after
-which active motor learning would occur for both groups to adapt to
-the right FF.
+learning. As in our previous work [@Brown:2009aa; @Cothros:2006aa;
+@McGregor:2016aa], we expected that motor learning by observing would
+affect initial performance in the right FF, after which active motor
+learning would occur for both groups to adapt to the right FF.
 
 ## Functional Connectivity Analysis
 
@@ -357,20 +371,20 @@ peaks used for each ROI.
 
 Functional connectivity analyses were performed on both resting-state
 runs acquired on day 1. Following preprocessing, a bandpass filter of
-0.01 – 0.1 Hz was applied to the resting-state data (Biswal et al.,
-1995; Damoiseaux et al., 2006). Mean-based intensity normalization was
-performed (mean value of 10,000) to remove global intensity
-differences between runs (Damoiseaux et al., 2006). We carried out
-seed-based correlation analyses on each subject's resting-state runs
-using FILM (FMRIB's Improved General Linear Model). This allowed us to
-assess FC between each ROI and the rest of the brain on day 1. The
-mean time series of each ROI was used as the predictor of interest in
-the GLM.  Nuisance regressors included the temporal derivative of the
-mean ROI time series, 6 rigid body motion parameters obtained from
-motion correction, mean global signal, mean white matter signal and
-mean CSF signal. For each ROI, the results of the subject-level
-analyses were then entered into a mixed-effects group-level analysis
-in which the predictor of interest was the group mean.
+0.01 – 0.1 Hz was applied to the resting-state data [@Biswal:1995aa;
+@Damoiseaux:2006aa]. Mean-based intensity normalization was performed
+(mean value of 10,000) to remove global intensity differences between
+runs [@Damoiseaux:2006aa]. We carried out seed-based correlation
+analyses on each subject's resting-state runs using FILM (FMRIB's
+Improved General Linear Model). This allowed us to assess FC between
+each ROI and the rest of the brain on day 1. The mean time series of
+each ROI was used as the predictor of interest in the GLM.  Nuisance
+regressors included the temporal derivative of the mean ROI time
+series, 6 rigid body motion parameters obtained from motion
+correction, mean global signal, mean white matter signal and mean CSF
+signal. For each ROI, the results of the subject-level analyses were
+then entered into a mixed-effects group-level analysis in which the
+predictor of interest was the group mean.
 
 Prior to the fMRI scan session on day 1, all subjects had performed
 200 reaches in the null field. Even though the robot did not apply
@@ -434,20 +448,20 @@ right FF. Indeed, we found that subjects who observed the tutor
 adapting to a left FF in the learning video exhibited greater PD
 during initial reaches in the right FF compared to control subjects
 who observed the tutor performing curved reaches in an unlearnable
-FF. As in previous work (Bernardi et al., 2013; Brown et al., 2009;
-Cothros et al., 2006; Mattar & Gribble, 2005; McGregor et al., 2016;
-Williams & Gribble, 2012), the effects of observation are most
-apparent early in the motor learning test (i.e., the first 10 reaches
-shown as blocks 1 and 2 in Fig 2A) and diminish as subjects in both
-the learning and control groups adapt to the right FF. Average motor
-learning by observing scores are shown in Figure
-[-@fig:experiment]B. Motor learning by observing scores reflect the PD
-of the first 3 reaches in the right FF relative to the subject's
-baseline PD in the null field. In Figure [-@fig:experiment]B, it can
-be seen that those subjects who observed the tutor undergoing left FF
-learning exhibited significantly higher motor learning by observing
-scores compared to control subjects who observed the tutor performing
-reaches in an unlearnable FF (*t*(28)=2.58, p < 0.01).
+FF. As in previous work [@Bernardi:2013aa; @Brown:2009aa;
+@Cothros:2006aa; @Mattar:2005aa; @McGregor:2016aa; @Williams:2012aa],
+the effects of observation are most apparent early in the motor
+learning test (i.e., the first 10 reaches shown as blocks 1 and 2 in
+Fig 2A) and diminish as subjects in both the learning and control
+groups adapt to the right FF. Average motor learning by observing
+scores are shown in Figure [-@fig:experiment]B. Motor learning by
+observing scores reflect the PD of the first 3 reaches in the right FF
+relative to the subject's baseline PD in the null field. In Figure
+[-@fig:experiment]B, it can be seen that those subjects who observed
+the tutor undergoing left FF learning exhibited significantly higher
+motor learning by observing scores compared to control subjects who
+observed the tutor performing reaches in an unlearnable FF
+(*t*(28)=2.58, p < 0.01).
 
 ## Functional Connectivity Analysis
 
@@ -536,33 +550,32 @@ motor learning by observing.
 The finding that pre-learning resting-state FC between PMd, M1, S1 and
 SPL predicts subsequent motor learning by observing is consistent with
 previous work demonstrating that M1 and the somatosensory system play
-necessary roles in motor learning by observing. Brown and colleagues
-(2009) used repetitive transcranial magnetic stimulation to induce a
-temporary ‘virtual' lesion to M1 immediately after subjects observed a
-FF learning video. A subsequent behavioral assessment showed that
+necessary roles in motor learning by observing. @Brown:2009aa used
+repetitive transcranial magnetic stimulation to induce a temporary
+'virtual' lesion to M1 immediately after subjects observed a FF
+learning video. A subsequent behavioral assessment showed that
 reducing M1 excitability following observation disrupted motor
 learning by observing. These results suggest that M1 plays a key role
 in motor learning by observing. We have also recently demonstrated
 that the somatosensory system plays a necessary role in motor learning
-by observing (McGregor et al., 2016). We used median nerve stimulation
-to occupy the somatosensory system with unrelated afferent inputs
-while subjects observed a video of a tutor undergoing FF
-learning. During observation, subjects received median nerve
-stimulation to the right arm (the same arm used by the tutor in the
-video), to the left arm (opposite the arm used by the tutor) or no
-stimulation. Stimulation disrupted motor learning by observing in a
-limb-specific manner such that stimulation of the right arm (observed
-effector) interfered with learning, whereas stimulation applied to the
-opposite arm did not. This result demonstrated that the somatosensory
-representation of the observed effector is necessary and therefore
-must be unoccupied during observation for motor learning by observing
-to occur. In a follow-up EEG experiment, we showed that S1 cortical
-activity, as assessed using somatosensory evoked potentials, increased
-for subjects who observed learning by an amount that positively
-correlated with subsequent behavioral motor learning by observing
-scores. These results suggest that observation-induced functional
-changes in S1 support motor learning by observing (McGregor et al.,
-2016).
+by observing [@McGregor:2016aa]. We used median nerve stimulation to
+occupy the somatosensory system with unrelated afferent inputs while
+subjects observed a video of a tutor undergoing FF learning. During
+observation, subjects received median nerve stimulation to the right
+arm (the same arm used by the tutor in the video), to the left arm
+(opposite the arm used by the tutor) or no stimulation. Stimulation
+disrupted motor learning by observing in a limb-specific manner such
+that stimulation of the right arm (observed effector) interfered with
+learning, whereas stimulation applied to the opposite arm did
+not. This result demonstrated that the somatosensory representation of
+the observed effector is necessary and therefore must be unoccupied
+during observation for motor learning by observing to occur. In a
+follow-up EEG experiment, we showed that S1 cortical activity, as
+assessed using somatosensory evoked potentials, increased for subjects
+who observed learning by an amount that positively correlated with
+subsequent behavioral motor learning by observing scores. These
+results suggest that observation-induced functional changes in S1
+support motor learning by observing [@McGregor:2016aa].
 
 The network identified in the current study overlaps with the results
 of recent neuroimaging studies showing that sensory-motor networks
@@ -571,27 +584,26 @@ previously shown that observing motor learning results in changes in
 resting-state FC among M1, S1, visual area V5/MT and the
 cerebellum. Functional connectivity changes within this network were
 related to behavioral measures of motor learning by observing,
-assessed following the fMRI sessions (McGregor & Gribble,
-2015). Moreover, Cross and colleagues (2009) have shown that learning
-new dance movement sequences by observing recruits brain areas
-including premotor and parietal cortices.  The authors reported
-greater activation in premotor and parietal regions when subjects
-observed movement sequences on which they had been trained (by
-observation) over the previous 5 days relative to untrained movement
-sequences. These studies suggest that the neural substrates of motor
-learning by observing includes premotor cortex, M1, S1 and parietal
-cortex. This is consistent with the results of the current study in
-that those subjects who exhibited greater pre-learning resting-state
-FC between PMd, M1, S1 and SPL were those who later learned the most
-from observation.
+assessed following the fMRI sessions [@McGregor:2015aa]. Moreover,
+@Cross:2009aa have shown that learning new dance movement sequences
+by observing recruits brain areas including premotor and parietal
+cortices.  The authors reported greater activation in premotor and
+parietal regions when subjects observed movement sequences on which
+they had been trained (by observation) over the previous 5 days
+relative to untrained movement sequences. These studies suggest that
+the neural substrates of motor learning by observing includes premotor
+cortex, M1, S1 and parietal cortex. This is consistent with the
+results of the current study in that those subjects who exhibited
+greater pre-learning resting-state FC between PMd, M1, S1 and SPL were
+those who later learned the most from observation.
 
 There are commonalities between the functional network identified in
 the current study and those functional networks that have been
-previously reported to predict active motor learning. Tomassini and
-colleagues (2011) showed that the task-based activation of premotor
-and parietal cortices (along with prefrontal cortex, basal ganglia and
-the cerebellum) is associated with higher behavioral measures of
-active motor learning. Wu and colleagues (2014) have similarly shown
+previously reported to predict active motor
+learning. @Tomassini:2011aa showed that the task-based activation of
+premotor and parietal cortices (along with prefrontal cortex, basal
+ganglia and the cerebellum) is associated with higher behavioral
+measures of active motor learning. @Wu:2014aa have similarly shown
 that resting-state FC (as measured by high-density EEG) among M1,
 premotor cortex and parietal cortex can predict active skill
 acquisition. The consistency between predictive functional networks
@@ -600,15 +612,15 @@ of similar neural substrates for these forms of motor learning.
 
 There is evidence from the active motor learning literature that
 individual differences in brain structure can also predict motor
-learning. Tomassini and colleagues (2011) demonstrated that individual
-differences in grey matter volume within the cerebellum and higher
-order visual areas (V2, V3, V5/MT) can also predict behavioral
-measures of active motor learning during a visuomotor tracking
-task. While there is evidence for structure-based predictability of
-active motor learning, in the current study we found that this was not
-the case for motor learning by observing; individual differences in
-grey matter volume could not account for variability in behavioral
-scores of motor learning by observing.
+learning. @Tomassini:2011aa demonstrated that individual differences
+in grey matter volume within the cerebellum and higher order visual
+areas (V2, V3, V5/MT) can also predict behavioral measures of active
+motor learning during a visuomotor tracking task. While there is
+evidence for structure-based predictability of active motor learning,
+in the current study we found that this was not the case for motor
+learning by observing; individual differences in grey matter volume
+could not account for variability in behavioral scores of motor
+learning by observing.
 
 Here we tested if pre-learning measures of brain function or structure
 could predict subsequent motor learning by observing. We found that
@@ -620,22 +632,22 @@ observing. These results demonstrate that individual differences in
 resting-state FC among sensory-motor cortical brain areas can explain
 part of the inter-individual variability in the extent to which
 observation facilitates motor learning. This finding is consistent
-with the idea that those individuals who have more ‘primed'
+with the idea that those individuals who have more 'primed'
 sensory-motor circuits are more predisposed to motor learning through
 observation. Pre-learning FC within the identified sensory-motor
 network may be used as an indicator of the extent to which observation
 will promote motor learning.  Predicting an individual's
 predisposition for motor learning by observing could be valuable in a
 clinical context for planning individualized rehabilitation strategies
-and improving prognostic accuracy (Stinear, 2010).
+and improving prognostic accuracy [@Stinear:2010aa].
 
 The origin of inter-individual variability in pre-learning
 sensory-motor FC is still unclear. In one scenario, it is possible
 that the observed inter-individual differences in FC are a reflection
 of only functional variability (not anatomical variability) within
 this network. However, given the close correspondence between
-anatomical and functional connectivity (e.g., Fox et al., 2005),
-another scenario is that the observed differences in FC arise from
+anatomical and functional connectivity [e.g., @Fox:2005aa], another
+scenario is that the observed differences in FC arise from
 inter-individual differences in anatomical connectivity. For example,
 it could be the case that greater structural connectivity between
 these sensory-motor brain areas results in higher pre-learning
@@ -646,12 +658,12 @@ inter-individual differences in structural connectivity among
 sensory-motor brain areas predicts motor learning by observing.
 Resting-state FC does not only reflect anatomical connectivity;
 indeed, much work has shown that resting-state FC can be shaped by
-recent experiences. Such “stimulus-rest interactions” have been
+recent experiences. Such "stimulus-rest interactions" have been
 demonstrated across several domains, for example, exposure to visual
-stimuli (Lewis et al., 2009) or undergoing active motor learning
-(Albert et al., 2009) can induce resting-state FC. Since resting-state
-FC is affected by both structure and function, it is likely the case
-that both of these factors contribute to individual differences in
+stimuli [@Lewis:2009aa] or undergoing active motor learning
+[@Albert:2009aa] can induce resting-state FC. Since resting-state FC
+is affected by both structure and function, it is likely the case that
+both of these factors contribute to individual differences in
 pre-learning sensory-motor FC.  While we cannot further pursue this
 question using the current dataset, this would be an interesting
 avenue for future research. Another outstanding issue is the stability
@@ -679,7 +691,7 @@ adapting her reaches to a left FF. A control group (n=15) observed a
 control video showing a tutor performing curved reaches in an
 unlearnable (randomly-varying) FF. Finally, all subjects performed
 reaches in a right FF as a behavioral test of motor learning by
-observing. FF, force field.](robot.png){#fig:robot width=11.6cm}
+observing. FF, force field.](robot.png){#fig:robot width=6.5in}
 
 \newpage
 
@@ -692,7 +704,7 @@ FF, which are shown as 5-trial blocks. Error bars represent
 SEM. **B**.  Motor learning by observing scores for the learning group
 (magenta) and control group (orange), reflecting PD in the right FF
 relative to baseline PD in the null field. Error bars represent
-SEM. FF, force field; PD, perpendicular deviation.](experiment.png){#fig:experiment width=11.6cm}
+SEM. FF, force field; PD, perpendicular deviation.](experiment.png){#fig:experiment width=6.5in}
 
 \newpage
 
@@ -707,7 +719,7 @@ subjects who exhibited stronger resting-state FC within this network on
 day 1 achieved greater motor learning by observing scores on the
 following day (r=0.76, p=0.001). FC values reflect the Fisher
 Z-transformed temporal correlation between the ROI time series and the
-average time series of all target clusters.](FC1.png){#fig:FC1 width=11.6cm}
+average time series of all target clusters.](FC1.png){#fig:FC1 width=6.5in}
 
 
 \newpage
@@ -726,7 +738,7 @@ identified in each run on day 1 achieved greater motor learning by
 observing scores on day 2. FC values reflect the Fisher Z-transformed
 temporal correlation between the ROI time series and the average time
 series of all target clusters within each run. FC, functional
-connectivity.](FC2.png){#fig:FC2 width=11.6cm}
+connectivity.](FC2.png){#fig:FC2 width=6.5in}
 
 
 \newpage
@@ -771,4 +783,9 @@ identified functional network. ROI, region of interest; L, left; R,
 right; SMA, supplementary motor area; PMd, dorsal premotor cortex; M1,
 primary motor cortex; S1, primary somatosensory cortex; SPL, superior
 parietal lobule; FC, functional connectivity. {#tbl:clusters}
+
+\newpage
+\singlespace
+
+# References
 

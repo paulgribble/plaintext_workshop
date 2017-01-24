@@ -84,6 +84,7 @@ one:
   numbering figures, equations, tables and cross-references to them
 - [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc) for
   citations & bibliographies
+- [Citation Style Language (CSL) citation styles](https://github.com/citation-style-language/styles)
 
 ## LaTeX
 

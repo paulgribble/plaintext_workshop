@@ -1,5 +1,12 @@
 
+OPTIONS =  --latex-engine=xelatex \
+	  -F pandoc-crossref \
+	  -F pandoc-citeproc \
+	  --template mylatex.template
 
-doc1.pdf:	doc1.md
-	pandoc doc1.md -o doc1.pdf -V fontsize=12pt -V mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1.2in -F pandoc-crossref
+ms.pdf:	ms.md
+	pandoc ms.md -o ms.pdf $(OPTIONS)
+
+clean:
+	rm -fr ms.pdf
 
