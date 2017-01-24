@@ -1,14 +1,16 @@
 ---
-title: Resting-state Functional Connectivity in Sensory and Motor Networks
-	   Predicts Individual Differences in Motor Learning by Observing
+title: Resting-state Functional Connectivity in Sensory and Motor
+       Networks Predicts Individual Differences in Motor Learning by Observing
 author: 
 - Heather R. McGregor^1,3^
 - Paul L. Gribble^1,2,3^
 institute: 
-- ^1^ Brain and Mind Institute, Dept. Psychology, University of Western Ontario
-- ^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine & Dentistry, University of Western Ontario
+- ^1^ Brain and Mind Institute, Dept. Psychology, University of
+  Western Ontario
+- ^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine &
+  Dentistry, University of Western Ontario
 - ^3^ Graduate Program in Neuroscience, University of Western Ontario
-date: January 24, 2017
+date: \today
 bibliography: refs.bib
 csl: /Users/plg/github/styles/the-journal-of-neuroscience.csl
 papersize: letter
@@ -745,7 +747,7 @@ connectivity.](FC2.png){#fig:FC2 width=6.5in}
 
 # Tables
 
-| **ROI** | **MNI x** | **MNI y**  |  **MNI z** | **Z Score** |
+| **ROI** |   **x**   |   **y**    |    **z**   | **Z Score** |
 | :------ | :-------: | :--------: | :--------: | :---------: |
 | L SMA   |     -4    |    -10     |     56     |    5.93     |
 | L PMd   |    -24    |    -22     |     66     |    6.02     |
@@ -767,7 +769,8 @@ regions listed in this table. L, left; R, right; SMA, supplementary
 motor area; PMd, dorsal premotor cortex; PMv, ventral premotor cortex;
 M1, primary motor cortex; S1, primary somatosensory cortex; V5/MT,
 middle temporal visual area; SPL, superior parietal lobule; IPL,
-inferior parietal lobule; BG, putamen; CB, cerebellum. {#tbl:ROIs}
+inferior parietal lobule; BG, putamen; CB, cerebellum. ROI locations
+are given in the MNI coordinate frame. {#tbl:ROIs}
 
 
 \newpage

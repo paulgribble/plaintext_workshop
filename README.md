@@ -16,6 +16,8 @@ February 21, 2017, 12:00pm---5:00pm, NSC 245A
 - universally readable
 - future-proof
 
+[Sustainable Authorship in Plain Text using Pandoc and Markdown](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown)
+
 # Software
 
 If you're on MacOS it would be a good idea to
