@@ -1,4 +1,4 @@
-*caution: in progress*
+*caution: still a work in progress*
 
 # plaintext_workshop
 
@@ -61,7 +61,7 @@ And there are many Markdown editors, here are some:
 - [Typora]()
 - [Mou](http://25.io/mou/)
 
-# Markdown
+## Markdown
 
 - [Markdown](http://daringfireball.net/projects/markdown/): The
   original specification by John Gruber
@@ -74,39 +74,18 @@ one:
 
   [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
 
-  
-
-# Pandoc
+## Pandoc
 
 - [Getting started with pandoc](http://pandoc.org/getting-started.html)
 - [Pandoc Demos](http://pandoc.org/demos.html)
 - [Pandoc FAQs](http://pandoc.org/faqs.html)
 - [Pandoc Manual](http://pandoc.org/MANUAL.html)
 
-## An example
+## LaTeX
 
-	---
-	title: My Awesome Paper
-	author: Ford Prefect
-	date: November 20, 2019
-	bibliography: bibliography.bib
-	csl: science.csl
-	---
+- [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
 
-	# Introduction
-
-	Here is a citation of my previous work [@Prefect-2015].
-
-To compile:
-
-	pandoc -S -o mydoc.docx --filter pandoc-citeproc test.md
-
-# LaTeX
-
-- xxx
-
-
-# Markdown vs LaTeX
+## Markdown vs LaTeX
 
 - Markdown has arguably nicer looking syntax
 - Markdown has more output formats (via pandoc)
@@ -115,5 +94,45 @@ To compile:
 With pandoc you can take advantage of both. Provide pandoc with a
 LaTeX template, containing all of the formatting details you want, and
 keep the content in Markdown format.
+
+
+
+
+
+
+
+
+
+
+# Writing in Markdown
+
+## Using Pandoc to create a pdf
+
+[variables for LaTeX](http://pandoc.org/MANUAL.html#variables-for-latex)
+
+Some examples:
+
+Basic document creation with all of the LaTeX defaults:
+
+	pandoc doc1.md -o doc1.pdf
+
+Let's make the sections and subsections numbered:
+
+	pandoc doc1.md -o doc1.pdf -N
+
+Let's change the font to 12pt
+
+	pandoc doc1.md -o doc1.pdf -N --variable fontsize=12pt
+
+Let's change the font to Palatino (the default LaTeX font is called
+Computer Modern):
+
+	pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
+    mainfont=Palatino --latex-engine=xelatex
+
+The page margins are to small for us, let's make them 1-inch all around:
+
+	pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
+    mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1in
 
 
