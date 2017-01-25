@@ -9,14 +9,21 @@ February 21, 2017, 12:00pm---5:00pm, NSC 245A
 
 # Why?
 
-- version control
-- platform independence
-- free and open source
 - separates content from formatting
 - universally readable
+- platform independent
 - future-proof
+- free and open source
+- version control
 
-[Sustainable Authorship in Plain Text using Pandoc and Markdown](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown)
+There are many blog posts out there about the virtues of using plaintext to do scientific (or more generally, academic) writing. Here are some:
+
+- [Sustainable Authorship in Plain Text using Pandoc and Markdown](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown)
+- [Academic Writing With Markdown](http://dylanstorey.com/2015/12/Academic_Writing_With_Markdown.html)
+- [Why (and How) I Wrote My Academic Book in Plain Text](http://wcm1.web.rice.edu/my-academic-book-in-plain-text.html)
+- [Markdown vs Latex for Academic Writing](http://jabranham.com/blog/2015/09/rmarkdown-vs-latex/)
+- [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
+
 
 # Software
 
@@ -69,12 +76,7 @@ And there are many Markdown editors, here are some:
   original specification by John Gruber
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/):
   a brief tutorial by GithHub
-  
-Just do a google search for `pandoc for scientific writing` and you
-will see many useful blog entries, tutorials and manifestos. Here is
-one:
 
-  [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
 
 ## Pandoc
 
@@ -101,10 +103,6 @@ one:
 With pandoc you can take advantage of both. Provide pandoc with a
 LaTeX template, containing all of the formatting details you want, and
 keep the content in Markdown format.
-
-
-
-
 
 
 # Writing in Markdown
