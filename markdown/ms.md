@@ -1,23 +1,35 @@
 ---
-title: Resting-state Functional Connectivity in Sensory and Motor
-       Networks Predicts Individual Differences in Motor Learning by Observing
-author: 
-- Heather R. McGregor^1,3^
-- Paul L. Gribble^1,2,3^
+title: Resting-state Functional Connectivity in Sensory and Motor Networks Predicts Individual Differences in Motor Learning by Observing
+author: Heather R. McGregor^1,3^ & Paul L. Gribble^1,2,3^
 date: \today
 bibliography: refs.bib
-csl: /Users/plg/github/styles/the-journal-of-neuroscience.csl
-papersize: letter
-mainfont: "Myriad Pro"
-fontsize: 12pt
-geometry: margin=1.2in
 ---
+
+\vspace{2ex}
 
 ^1^ Brain and Mind Institute, Dept. Psychology, University of
   Western Ontario \newline
 ^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine &
   Dentistry, University of Western Ontario \newline
 ^3^ Graduate Program in Neuroscience, University of Western Ontario
+
+\vspace{3ex}
+
+**Abbreviated Title**: Predicting Motor Learning by Observing
+
+**Word Counts**
+
+- Abstract: 164/165
+- Introduction: 644/650
+- Methods: 2780
+- Results: 902
+- Discussion: 1276
+- Number of Figures: 4
+- Number of Tables: 2
+
+**Keywords**: human; motor learning; observation; resting-state fMRI
+
+The authors report no financial interests or conflicts of interests.
 
 \newpage
 
@@ -41,6 +53,10 @@ resting-state FC among bilateral PMd, M1, S1 and left SPL was
 positively correlated with behavioral measures of post-observation
 motor learning. Sensory-motor resting-state FC thus predicts the
 extent to which observation will promote subsequent motor learning.
+
+# Significance Statement
+
+xxx
 
 \newpage
 
@@ -158,6 +174,7 @@ returned the subject's hand to the start position.
 
 The robot applied a velocity-dependent force field during the reaching
 task according to Equation [-@eq:forcefield]:
+
 $$
 	\begin{bmatrix} F_{x}\\  F_{y} \end{bmatrix} = 
 	\begin{bmatrix} 0 &dk\\ -dk &0 \end{bmatrix}
@@ -694,7 +711,7 @@ adapting her reaches to a left FF. A control group (n=15) observed a
 control video showing a tutor performing curved reaches in an
 unlearnable (randomly-varying) FF. Finally, all subjects performed
 reaches in a right FF as a behavioral test of motor learning by
-observing. FF, force field.](robot.png){#fig:robot width=6.5in}
+observing. FF, force field.](figures/robot.png){#fig:robot width=6.5in}
 
 \newpage
 
@@ -707,7 +724,7 @@ FF, which are shown as 5-trial blocks. Error bars represent
 SEM. **B**.  Motor learning by observing scores for the learning group
 (magenta) and control group (orange), reflecting PD in the right FF
 relative to baseline PD in the null field. Error bars represent
-SEM. FF, force field; PD, perpendicular deviation.](experiment.png){#fig:experiment width=6.5in}
+SEM. FF, force field; PD, perpendicular deviation.](figures/experiment.png){#fig:experiment width=6.5in}
 
 \newpage
 
@@ -722,7 +739,7 @@ subjects who exhibited stronger resting-state FC within this network on
 day 1 achieved greater motor learning by observing scores on the
 following day (r=0.76, p=0.001). FC values reflect the Fisher
 Z-transformed temporal correlation between the ROI time series and the
-average time series of all target clusters.](FC1.png){#fig:FC1 width=6.5in}
+average time series of all target clusters.](figures/FC1.png){#fig:FC1 width=6.5in}
 
 
 \newpage
@@ -741,7 +758,7 @@ identified in each run on day 1 achieved greater motor learning by
 observing scores on day 2. FC values reflect the Fisher Z-transformed
 temporal correlation between the ROI time series and the average time
 series of all target clusters within each run. FC, functional
-connectivity.](FC2.png){#fig:FC2 width=6.5in}
+connectivity.](figures/FC2.png){#fig:FC2 width=6.5in}
 
 
 \newpage
