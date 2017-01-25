@@ -77,6 +77,8 @@ And there are many Markdown editors, here are some:
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/):
   a brief tutorial by GithHub
 
+- if you need a hard line break, put two or more spaces at the end of a line
+
 
 ## Pandoc
 
