@@ -136,4 +136,62 @@ The page margins are to small for us, let's make them 1-inch all around:
 	pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
     mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1in
 
+## Where to put the formatting codes?
+
+### on the command line
+
+  pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
+    mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1in
+
+Above we put various formatting codes (font, margins, etc) in the command-line command to run pandoc. There are other ways to do it.
+
+### in a YAML header in the main document
+
+    ---
+    title: Hunting Replicants
+    author: Rick Deckard
+    date: November 1, 2019
+    papersize: letter
+    mainfont: "Myriad Pro"
+    fontsize: 12pt
+    geometry: margin=1.2in
+    ---
+
+Here we include, along with the title, author and date, various formatting options in the main document itself. Now to convert the plaintext document `ms.md` to pdf we can issue a simpler command:
+
+    pandoc ms.md -o ms.pdf --latex-engine=xelatex
+
+We include the `--latex-engine=xelatex` option in the pandoc command, because we are asking for a nonstandard font. When converting to pdf, pandoc does this via LaTeX using the `pdflatex` conversion engine as a default. Unfortunately `pdflatex` doesn't handle non-default fonts particularly well (or at least, it's not very flexible). The `xelatex` LaTeX conversion engine handles fonts much more flexibly and allows you to use any font that's installed on your computer. Above I chose `Myriad Pro`.
+
+### in a separate file
+
+We can put the formatting stuff into a separate file, called say `formatting.yaml`:
+
+    ---
+    papersize: letter
+    mainfont: "Myriad Pro"
+    fontsize: 12pt
+    geometry: margin=1.2in
+    ---
+
+and leave the header of our main document for just the content, no formatting:
+
+    ---
+    title: Hunting Replicants
+    author: Rick Deckard
+    date: November 1, 2019
+    ---
+
+The advantage of this is we really do separate out content from formatting. Now the command to convert from `ms.md` to pdf would be:
+
+    pandoc ms.md -o ms.pdf -H formatting.yaml --latex-engine=xelatex
+
+We use `-H formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
+
+
+
+
+
+
+
 
