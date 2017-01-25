@@ -184,9 +184,9 @@ and leave the header of our main document for just the content, no formatting:
 
 The advantage of this is we really do separate out content from formatting. Now the command to convert from `ms.md` to pdf would be:
 
-    pandoc ms.md -o ms.pdf -H formatting.yaml --latex-engine=xelatex
+    pandoc ms.md -o ms.pdf formatting.yaml --latex-engine=xelatex
 
-We use `-H formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
+We include `formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
 
 
 
