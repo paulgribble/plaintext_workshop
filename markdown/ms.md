@@ -4,21 +4,22 @@ title: Resting-state Functional Connectivity in Sensory and Motor
 author: 
 - Heather R. McGregor^1,3^
 - Paul L. Gribble^1,2,3^
-institute: 
-- ^1^ Brain and Mind Institute, Dept. Psychology, University of
-  Western Ontario
-- ^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine &
-  Dentistry, University of Western Ontario
-- ^3^ Graduate Program in Neuroscience, University of Western Ontario
 date: \today
 bibliography: refs.bib
 csl: /Users/plg/github/styles/the-journal-of-neuroscience.csl
 papersize: letter
-mainfont: "Palatino"
+mainfont: "Myriad Pro"
 fontsize: 12pt
-linestretch: 1.5
-geometry: margin=1.0in
+geometry: margin=1.2in
 ---
+
+^1^ Brain and Mind Institute, Dept. Psychology, University of
+  Western Ontario \newline
+^2^ Dept. Physiology & Pharmacology, Schulich School of Medicine &
+  Dentistry, University of Western Ontario \newline
+^3^ Graduate Program in Neuroscience, University of Western Ontario
+
+\newpage
 
 # Abstract
 
