@@ -15,6 +15,7 @@ February 21, 2017, 12:00pm---5:00pm, NSC 245A
 - future-proof
 - free and open source
 - version control
+- opendiff ms.md ms_new.md 
 
 There are many blog posts out there about the virtues of using plaintext to do scientific (or more generally, academic) writing. Here are some:
 
