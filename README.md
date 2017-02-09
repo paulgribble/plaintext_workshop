@@ -1,4 +1,3 @@
-*caution: this is still a work in progress ...*
 
 # plaintext_workshop
 
@@ -82,15 +81,34 @@ If you're using Sublime Text (as I am) there is a nice Markdown plugin called [M
 
 # Markdown
 
-- [Markdown](http://daringfireball.net/projects/markdown/): The
-  original specification by John Gruber
-- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/):
-  a brief tutorial by GithHub
+Let's start with Markdown, rather than LaTeX, since Markdown is less intimidating.
 
-- if you need a hard line break, put two or more spaces at the end of a line
+Markdown is a specification for "marking up" plain text documents using not-terribly-difficult-or-offensive codes that denote semantic elements. By "semantic elements" I mean things like headings, sub-headings, quotes, and so on. There are also variants of Markdown, such as Git-Markdown, that add various other codes to further extend Markdown's capabilities.
 
+- [Markdown](http://daringfireball.net/projects/markdown/): The original specification by John Gruber
+- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/): a brief tutorial by GithHub
+
+Here is a simple Markdown document:
+
+```
+# Chapter 1
+
+It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.
+```
+
+We have a heading, denoted using the `#` symbol, called "Chapter 1", followed by a paragraph of plain text. There are lots of other elements we can denote using Markdown, including things like lists, images, quotes, code listings, and so on. See the documentation for examples.
+
+Note that there is no *stylistic* specification within a Markdown document. The codes denote semantic elements not stylistic elements. This is part of the philosophy of separating content from style. The idea is that one can take a semantically coded plain text Markdown document, and convert it into another format, such as HTML, or pdf, or a host of other formats, and along the way, specify a particular *style*---that is, a sort of translation of what each semantic element should look like.
+
+If you've coded in HTML and used CSS files, this is the same idea.
+
+The program we are going to use to perform this conversion is **pandoc**.
 
 # Pandoc
+
+Pandoc is a program that can convert not just from Markdown to a host of other formats, but can convert from multiple formats to multiple formats. The [list of formats](http://pandoc.org) pandoc knows about is long.
+
+Here are some resources for working with pandoc:
 
 - [Getting started with pandoc](http://pandoc.org/getting-started.html)
 - [Pandoc Demos](http://pandoc.org/demos.html)
@@ -102,11 +120,30 @@ If you're using Sublime Text (as I am) there is a nice Markdown plugin called [M
   citations & bibliographies
 - [Citation Style Language (CSL) citation styles](https://github.com/citation-style-language/styles)
 
-## LaTeX
+Let's take the sample Markdown document above (the opening paragraph of George Orwell's "Nineteen Eighty Four") and convert it, using pandoc, to another format.
+
+First save the document in a plain text file, let's call it `1984.md`. Now let's convert it into HTML format using pandoc:
+
+```
+pandoc 1984.md -o 1984.html
+```
+
+The file we get looks like this:
+
+```
+<h1 id="chapter-1">Chapter 1</h1>
+<p>It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.</p>
+```
+
+What you can see is that pandoc has basically translated the Markdown semantic codes into the corresponding HTML codes. In fact if you double-click on the `1984.html` file, and open it in a web browser, it will render the html file for you in the browser:
+
+![1984.html](images/1984.png)
+
+# LaTeX
 
 - [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
 
-## Markdown vs LaTeX
+# Markdown vs LaTeX
 
 - Markdown has arguably nicer looking syntax
 - Markdown has more output formats (via pandoc)
