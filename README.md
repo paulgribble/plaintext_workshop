@@ -97,7 +97,11 @@ Here is a very simple Markdown document:
 ```
 # Chapter 1
 
-It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.
+It was a bright cold day in April, and the clocks were striking
+thirteen. Winston Smith, his chin nuzzled into his breast in an effort
+to escape the vile wind, slipped quickly through the glass doors of
+Victory Mansions, though not quickly enough to prevent a swirl of
+gritty dust from entering along with him.
 ```
 
 We have a heading, denoted using the `#` symbol, called "Chapter 1", followed by a paragraph of plain text. There are lots of other elements we can denote using Markdown, including things like lists, images, quotes, code listings, and so on. See the documentation for examples.
@@ -136,7 +140,11 @@ The file we get looks like this:
 
 ```
 <h1 id="chapter-1">Chapter 1</h1>
-<p>It was a bright cold day in April, and the clocks were striking thirteen. Winston Smith, his chin nuzzled into his breast in an effort to escape the vile wind, slipped quickly through the glass doors of Victory Mansions, though not quickly enough to prevent a swirl of gritty dust from entering along with him.</p>
+<p>It was a bright cold day in April, and the clocks were striking
+thirteen. Winston Smith, his chin nuzzled into his breast in an effort
+to escape the vile wind, slipped quickly through the glass doors of
+Victory Mansions, though not quickly enough to prevent a swirl of
+gritty dust from entering along with him.</p>
 ```
 
 What you can see is that pandoc has basically translated the Markdown semantic codes into the corresponding HTML codes. In fact if you double-click on the `1984.html` file, and open it in a web browser, it will render the html file for you in the browser:
@@ -148,13 +156,20 @@ This sample document isn't very interesting, at least it doesn't make use of ver
 ```
 # Methods
 
-Participants grasped the handle of an IMT2 two degree of freedom robot (InMotion Technologies Inc.) as they reached from a start position to a movement target, located 20 cm away. The robot applied a velocity-dependent force to the hand during movement, according to [@eq:forcefield].
+Participants grasped the handle of an IMT2 two degree of freedom robot
+(InMotion Technologies Inc.) as they reached from a start position to
+a movement target, located 20 cm away. The robot applied a
+velocity-dependent force to the hand during movement, according to
+[@eq:forcefield].
 
 $$
     F_{x} = k \left[ v_{y} \right]
 $$ {#eq:forcefield}
 
-In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions, $F_{x}$ is the applied robot force in the left-right direction, $v_{y}$ is hand velocity in the forward-backward direction and $k$=14 Ns/m.
+In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions,
+$F_{x}$ is the applied robot force in the left-right direction,
+$v_{y}$ is hand velocity in the forward-backward direction and $k$=14
+Ns/m.
 ```
 
 Here we have a heading `# Methods` followed by some text, and then an equation, denoted using `$$` codes to start and then end the equation. The equation is specified using LaTeX syntax. After the final `$$` code that denotes the end of the equation, we have a Markdown code that *labels* the equation using a label of our choice, in this case `forcefield`. What this enables us to do is refer to this equation using the *label*, and let Pandoc figure out the equation numbering. This is great, it means if we have many equations, we don't have to manually number them.
