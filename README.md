@@ -205,8 +205,12 @@ and then opening the `template.latex` file you just created. It looks crazy if y
 So for example to change the font to Helvetica, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
 
 ```{bash}
-pandoc robot.md --filter pandoc-crossref -V mainfont=Helvetica \
--V fontsize=12pt --latex-engine=xelatex -o robot.pdf
+pandoc robot.md \
+--filter pandoc-crossref \
+-V mainfont=Helvetica \
+-V fontsize=12pt \
+--latex-engine=xelatex \
+-o robot.pdf
 ```
 
 Now our document looks like this:
@@ -236,12 +240,13 @@ xxx
 Here is the command I use to convert this `README.md` document into a pdf file:
 
 ```{bash}
-pandoc README.md -o README.pdf \
+pandoc README.md \
 -V geometry:margin=1.0in \
 -V mainfont=Helvetica \
 -V fontsize=12pt \
 -V colorlinks \
---latex-engine=xelatex
+--latex-engine=xelatex \
+-o README.pdf
 ```
 
 
