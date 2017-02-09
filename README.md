@@ -1,4 +1,4 @@
-*caution: still a work in progress*
+*caution: this is still a work in progress ...*
 
 # plaintext_workshop
 
@@ -7,17 +7,17 @@ Markdown & pandoc
 
 February 21, 2017, 12:00pm---5:00pm, NSC 245A
 
-# Why?
+# Why plaintext?
 
 - separates content from formatting
 - universally readable
 - platform independent
 - future-proof
 - free and open source
-- version control
-- opendiff ms.md ms_new.md 
+- can easily use version control (e.g. [Git](https://git-scm.com) & [GitHub](https://github.com))
+- can easily compare old vs new (e.g. opendiff (FileMerge) on OS X, e.g. [Meld](http://meldmerge.org) on Linux) 
 
-There are many blog posts out there about the virtues of using plaintext to do scientific (or more generally, academic) writing. Here are some:
+There are many blog posts out there about the virtues of using plaintext to do scientific (or more generally, academic) writing. Here are some of them:
 
 - [Sustainable Authorship in Plain Text using Pandoc and Markdown](http://programminghistorian.org/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown)
 - [Academic Writing With Markdown](http://dylanstorey.com/2015/12/Academic_Writing_With_Markdown.html)
@@ -25,21 +25,26 @@ There are many blog posts out there about the virtues of using plaintext to do s
 - [Markdown vs Latex for Academic Writing](http://jabranham.com/blog/2015/09/rmarkdown-vs-latex/)
 - [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
 
-
 # Software
 
-If you're on MacOS it would be a good idea to
-install [Homebrew](http://brew.sh), a package manager that gives you
-easy access to installing all sorts of useful GNU/Linux tools.
+If you're on MacOS it would be a good idea to install [Homebrew](http://brew.sh), a package manager that gives you easy access to installing all sorts of useful GNU/Linux tools including some of the tools listed here.
+
+First let's **install LaTeX**. It's a large download. If you're on a Mac, install LaTeX using the downloadable binary installer. If you're on Ubuntu or another debian-based GNU/Linux, `sudo apt-get install texlive-full`.
 
 - [LaTeX](https://www.latex-project.org)
   - MacOS: [MacTeX](http://www.tug.org/mactex/)
   - GNU/Linux: [TeX Live](https://wiki.debian.org/Latex)
   - Windows: [MiKTeX](https://miktex.org)
+
+Next let's **install pandoc** and some extras. 
+
+If you're on a Mac, and if you've installed homebrew, you can install pandoc using: `brew install pandoc pandoc-citeproc pandoc-crossref`. On GNU/Linux, I'm sure you can figure it out. I think pandoc is available using `sudo apt-get install pandoc` but I'm not sure about pandoc-citeproc and pandoc-crossref. Some googling should bring you an answer.
+
 - [pandoc](http://pandoc.org/installing.html)
 
-You will need a good text editor as well. There are many to choose
-from. Here are a few:
+You will need a good **text editor** as well. There are many to choose from. Personally I use Emacs and Sublime Text. For our purposes here we don't need much sophistication so it comes down to personal preference.
+
+Here is a list of some text editors:
 
 - [Emacs](https://www.gnu.org/software/emacs/)
 - [Vim](http://www.vim.org/download.php)
@@ -48,30 +53,34 @@ from. Here are a few:
 - [BBEdit](http://www.barebones.com/products/bbedit/index.html)
 - [Notepad++](https://notepad-plus-plus.org)
 - [Visual Studio Code](https://code.visualstudio.com)
-- [Gedit]()
+- [Gedit](https://wiki.gnome.org/Apps/Gedit)
 
-There are some GUI-based LaTeX editors as well:
+There are some GUI-based LaTeX editors as well, if you're into that sort of thing (I'm not): 
 
-- [TeXmaker]()
-- [TeXstudio]()
-- [TeXworks]()
+- [TeXmaker](http://www.xm1math.net/texmaker/)
+- [TeXstudio](http://www.texstudio.org)
+- [TeXworks](https://www.tug.org/texworks/)
 
-There are online LaTeX editors/compilers/environments:
+There are also online LaTeX editors/compilers/environments. The advantage is that you don't have to install LaTeX locally on your own machine, and you don't have to worry about installing packages and updating outdated packages (they are all in the cloud). The disdvantage is that you can't do anything if you're not connected to the internet.
 
-- [ShareLaTeX]()
-- [Overleaf]()
+- [ShareLaTeX](https://www.sharelatex.com)
+- [Overleaf](https://www.overleaf.com)
 
-And there are many Markdown editors, here are some:
+There are also many, many Markdown-specific editors. This means they are meant for editing Markdown in particular, and they come with various kinds of built-in smarts for pretty-formatting Markdown.
 
-- [iA Writer]()
-- [Marked]()
-- [MacDown]()
-- [Bear]()
-- [Ulysses]()
-- [Typora]()
+Here are some:
+
+- [iA Writer](https://ia.net/writer/)
+- [Marked](http://marked2app.com)
+- [MacDown](https://macdown.uranusjr.com)
+- [Bear](http://www.bear-writer.com)
+- [Ulysses](https://www.ulyssesapp.com)
+- [Typora](https://typora.io)
 - [Mou](http://25.io/mou/)
 
-## Markdown
+If you're using Sublime Text (as I am) there is a nice Markdown plugin called [MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing).
+
+# Markdown
 
 - [Markdown](http://daringfireball.net/projects/markdown/): The
   original specification by John Gruber
@@ -81,7 +90,7 @@ And there are many Markdown editors, here are some:
 - if you need a hard line break, put two or more spaces at the end of a line
 
 
-## Pandoc
+# Pandoc
 
 - [Getting started with pandoc](http://pandoc.org/getting-started.html)
 - [Pandoc Demos](http://pandoc.org/demos.html)
