@@ -94,7 +94,7 @@ Here are some Markdown references online:
 
 Here is a very simple Markdown document:
 
-```
+```{markdown}
 # Chapter 1
 
 It was a bright cold day in April, and the clocks were striking
@@ -132,13 +132,13 @@ Let's take the sample Markdown document above (the opening paragraph of George O
 
 First save the document in a plain text file, let's call it `1984.md`. Now let's convert it into HTML format using pandoc:
 
-```
+```{bash}
 pandoc 1984.md -o 1984.html
 ```
 
 The file we get looks like this:
 
-```
+```{html}
 <h1 id="chapter-1">Chapter 1</h1>
 <p>It was a bright cold day in April, and the clocks were striking
 thirteen. Winston Smith, his chin nuzzled into his breast in an effort
@@ -153,7 +153,7 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 
 This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
 
-```
+```{markdown}
 # Methods
 
 Participants grasped the handle of an IMT2 two degree of freedom robot
@@ -176,7 +176,7 @@ Here we have a heading `# Methods` followed by some text, and then an equation, 
 
 Save the above Markdown text in a plain text file called `robot.md` and let's convert it using pandoc to pdf format.
 
-```
+```{bash}
 pandoc robot.md --filter pandoc-crossref -o robot.pdf
 ```
 
@@ -196,7 +196,7 @@ Let's say you're not too fond of Computer Modern as a font choice. We can change
 
 When Pandoc converts to pdf, it uses LaTeX as an in-between. In fact, Pandoc uses a LaTeX *template* to generate a LaTeX file, which is then converted, using LaTeX, to pdf. You can acutally see what the template looks like by typing:
 
-```
+```{bash}
 pandoc -D latex > template.latex
 ```
 
@@ -204,7 +204,7 @@ and then opening the `template.latex` file you just created. It looks crazy if y
 
 So for example to change the font to Helvetica, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
 
-```
+```{bash}
 pandoc robot.md --filter pandoc-crossref -V mainfont=Helvetica \
 -V fontsize=12pt --latex-engine=xelatex -o robot.pdf
 ```
@@ -233,7 +233,16 @@ Makefile
 
 xxx
 
+Here is the command I use to convert this `README.md` document into a pdf file:
 
+```{bash}
+pandoc README.md -o README.pdf \
+-V geometry:margin=1.0in \
+-V mainfont=Helvetica \
+-V fontsize=12pt \
+-V colorlinks \
+--latex-engine=xelatex
+```
 
 
 # LaTeX
