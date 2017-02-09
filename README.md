@@ -215,6 +215,11 @@ Now our document looks like this:
 
 Our font is now Helvetica and the size is 12pt.
 
+In the Pandoc command above, we use the `-V` flag to tell Pandoc to set a *variable* to a particular value. For example the `mainfont` variable is set to `Helvetica`, and the `fontsize` variable is set to `12pt`.
+
+There is a whole bunch of variables that can be sent to Pandoc in order to control the look of your output, here is the relevant section of the Pandoc documentation:
+
+[Variables set by Pandoc](http://pandoc.org/MANUAL.html#variables-set-by-pandoc)
 
 
 
