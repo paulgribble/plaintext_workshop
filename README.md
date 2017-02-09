@@ -175,6 +175,27 @@ Note in the pandoc command above we used the flag `--filter pandoc-crossref`. Th
 
 The `[@eq:forcefield]` code we used to refer to our equation has been properly converted into "eq. 1". This is really useful once you have many equations. When you decide to reorder them, or delete some, or add some, you don't have to worry about maintaining the correct numbering. LaTeX does this for you. It also does this for Figure numbers, Table numbers, bibliographic references, table of contents, even an Index if you want one in your document.
 
+## Changing the font
+
+Let's say you're not too fond of Computer Modern as a font choice. We can change that.
+
+When Pandoc converts to pdf, it uses LaTeX as an in-between. In fact, Pandoc uses a LaTeX *template* to generate a LaTeX file, which is then converted, using LaTeX, to pdf. You can acutally see what the template looks like by typing:
+
+```
+pandoc -D latex > template.latex
+```
+
+and then opening the `template.latex` file you just created. It looks crazy if you've never seen LaTeX code before, and probably still looks icky even if you have. Pandoc has inserted a number of *variables* into the LaTeX document that lets you control various aspects of the final pdf output, using command-line arguments to Pandoc.
+
+So for example to change the font to Palatino, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
+
+```
+pandoc robot.md --filter pandoc-crossref -V mainfont=Palatino -V fontsize=12pt --latex-engine=xelatex -o robot.pdf
+```
+
+Now our document looks like this:
+
+![robot2.pdf](images/robot2.png)
 
 
 
