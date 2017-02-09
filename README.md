@@ -169,7 +169,7 @@ Now open the file `robot.pdf` and you will see something like this:
 
 ![robot.pdf](images/robot.png)
 
-Pandoc actually uses LaTeX under the hood, to convert from Markdown to pdf. We get a Heading (Methods) in large, boldface font. We get a paragraph typset using a serif font (LaTeX uses a font called Computer Modern by default), and full-justified. We get our equation centered and numbered. 
+Pandoc actually uses LaTeX under the hood to convert from Markdown to pdf. We get a Heading (Methods) in large, boldface font. We get a paragraph typset using a serif font (LaTeX uses a font called Computer Modern by default), and full-justified. We get our equation centered and numbered. 
 
 Note in the pandoc command above we used the flag `--filter pandoc-crossref`. This is needed in order to handle the equation labels and numbering properly.
 
