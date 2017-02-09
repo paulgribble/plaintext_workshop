@@ -219,7 +219,20 @@ In the Pandoc command above, we use the `-V` flag to tell Pandoc to set a *varia
 
 There is a whole bunch of variables that can be sent to Pandoc in order to control the look of your output, here is the relevant section of the Pandoc documentation:
 
-[Variables set by Pandoc](http://pandoc.org/MANUAL.html#variables-set-by-pandoc)
+[Pandoc variables for LaTeX](http://pandoc.org/MANUAL.html#variables-for-latex)
+
+Note that when changing the font away from one of the LaTeX standard choices (which are few, and arguably ugly), we have to tell Pandoc to use the `xelatex` engine instead of the standard LaTeX engine, to generate the pdf file. This is done with the command-line flag `--latex-engine=xelatex`. The standard LaTeX engine for generating a pdf is called `pdflatex` but it doesn't handle non-default fonts well. The `xelatex` engine does, so any time we want to change font away from the LaTeX defaults, I would suggest using this `--latex-engine=xelatex` flag. The `xelatex` engine allows you to use any font that's installed on your system.
+
+xxx
+
+other document changes (margin, etc, check out the variables list)
+
+xxx
+
+Makefile
+
+xxx
+
 
 
 
