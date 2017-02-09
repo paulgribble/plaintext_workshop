@@ -139,6 +139,13 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 
 ![1984.html](images/1984.png)
 
+This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
+
+```
+
+```
+
+
 # LaTeX
 
 - [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
