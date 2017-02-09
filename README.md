@@ -187,15 +187,18 @@ pandoc -D latex > template.latex
 
 and then opening the `template.latex` file you just created. It looks crazy if you've never seen LaTeX code before, and probably still looks icky even if you have. Pandoc has inserted a number of *variables* into the LaTeX document that lets you control various aspects of the final pdf output, using command-line arguments to Pandoc.
 
-So for example to change the font to Palatino, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
+So for example to change the font to Helvetica, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
 
 ```
-pandoc robot.md --filter pandoc-crossref -V mainfont=Palatino -V fontsize=12pt --latex-engine=xelatex -o robot.pdf
+pandoc robot.md --filter pandoc-crossref -V mainfont=Helvetica \
+-V fontsize=12pt --latex-engine=xelatex -o robot.pdf
 ```
 
 Now our document looks like this:
 
 ![robot2.pdf](images/robot2.png)
+
+Our font is now Helvetica and the size is 12pt.
 
 
 
