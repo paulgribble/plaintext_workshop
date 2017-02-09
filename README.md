@@ -85,10 +85,14 @@ Let's start with Markdown, rather than LaTeX, since Markdown is less intimidatin
 
 Markdown is a specification for "marking up" plain text documents using not-terribly-difficult-or-offensive codes that denote semantic elements. By "semantic elements" I mean things like headings, sub-headings, quotes, and so on. There are also variants of Markdown, such as Git-Markdown, that add various other codes to further extend Markdown's capabilities.
 
+This document that you're reading (`README.md`) is a Markdown document. If you're reading it on GitHub, it's been rendered for you in your web browser by GitHub.
+
+Here are some Markdown references online:
+
 - [Markdown](http://daringfireball.net/projects/markdown/): The original specification by John Gruber
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/): a brief tutorial by GithHub
 
-Here is a simple Markdown document:
+Here is a very simple Markdown document:
 
 ```
 # Chapter 1
@@ -102,7 +106,7 @@ Note that there is no *stylistic* specification within a Markdown document. The 
 
 If you've coded in HTML and used CSS files, this is the same idea.
 
-The program we are going to use to perform this conversion is **pandoc**.
+The program we are going to use to perform this conversion is **Pandoc**.
 
 # Pandoc
 
@@ -142,7 +146,11 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
 
 ```
+# Introduction
 
+Experimental studies of human motor learning often make use of robotic devices to manipulate the mechanics of human limb motion. The idea is to change the relationship between muscle forces and limb motion by using the robot to apply motion-dependent forces to the limb. The muscle forces that usually result in a given motion of the limb (e.g. reaching with the hand in a straight line between two targets) now result in a different motion, because of the added forces imposed by the robot. Through *motor learning*, the nervous system learns to generate new muscle forces to counteract the forces imposed by the robot.
+
+In one such study,
 ```
 
 
