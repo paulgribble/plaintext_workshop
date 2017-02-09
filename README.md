@@ -146,12 +146,28 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
 
 ```
-# Introduction
+# Methods
 
-Experimental studies of human motor learning often make use of robotic devices to manipulate the mechanics of human limb motion. The idea is to change the relationship between muscle forces and limb motion by using the robot to apply motion-dependent forces to the limb. The muscle forces that usually result in a given motion of the limb (e.g. reaching with the hand in a straight line between two targets) now result in a different motion, because of the added forces imposed by the robot. Through *motor learning*, the nervous system learns to generate new muscle forces to counteract the forces imposed by the robot.
+Participants grasped the handle of an IMT2 two degree of freedom robot (InMotion Technologies Inc.) as they reached from a start position to a movement target, located 20 cm away. The robot applied a velocity-dependent force to the hand during movement, according to [@eq:forcefield].
 
-In one such study,
+$$
+    F_{x} = k \left[ v_{y} \right]
+$$ {#eq:forcefield}
+
+In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions, $F_{x}$ is the applied robot force in the left-right direction, $v_{y}$ is hand velocity in the forward-backward direction and $k$=14 Ns/m.
 ```
+
+Here we have a heading `# Methods` followed by some text, and then an equation, denoted using `$$` codes to start and then end the equation. The equation is specified using LaTeX syntax. After the final `$$` code that denotes the end of the equation, we have a Markdown code that *labels* the equation using a label of our choice, in this case `forcefield`. What this enables us to do is refer to this equation using the *label*, and let Pandoc figure out the equation numbering. This is great, it means if we have many equations, we don't have to manually number them.
+
+Save the above Markdown text in a plain text file called `robot.md` and let's convert it using pandoc to pdf format.
+
+```
+pandoc robot.md --filter pandoc-crossref -o robot.pdf
+```
+
+Now open the file `robot.pdf` and you will see something like this:
+
+![robot.pdf](images/robot.png)
 
 
 # LaTeX
