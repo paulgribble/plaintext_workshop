@@ -128,6 +128,8 @@ Here are some resources for working with pandoc:
 - [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc) for
   citations & bibliographies
 - [Citation Style Language (CSL) citation styles](https://github.com/citation-style-language/styles)
+- [Documentation and Tutorials](https://github.com/jgm/pandoc/wiki/Documentation-and-Tutorials)
+- [User contributed templates](https://github.com/jgm/pandoc/wiki/User-contributed-templates)
 
 Let's take the sample Markdown document above (the opening paragraph of George Orwell's "Nineteen Eighty Four") and convert it, using pandoc, to another format.
 
