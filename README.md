@@ -91,7 +91,7 @@ This document that you're reading (`README.md`) is a Markdown document. If you'r
 Here are some Markdown references online:
 
 - [Markdown](http://daringfireball.net/projects/markdown/): The original specification by John Gruber
-- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/): a brief tutorial by GithHub
+- [Mastering Markdown](https://guides.github.com/features/mastering-markdown/): a brief tutorial by GitHub
 
 Here is a very simple Markdown document:
 
@@ -246,7 +246,7 @@ Here is the command I use to convert this `README.md` document into a pdf file:
 pandoc README.md \
 -V geometry:margin=1.0in \
 -V mainfont=Helvetica \
--V monofont=Menlo \
+-V monofont=Monaco \
 -V fontsize=12pt \
 -V colorlinks \
 --latex-engine=xelatex \
