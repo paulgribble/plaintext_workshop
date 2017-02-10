@@ -23,6 +23,7 @@ There are many blog posts out there about the virtues of using plaintext to do s
 - [Why (and How) I Wrote My Academic Book in Plain Text](http://wcm1.web.rice.edu/my-academic-book-in-plain-text.html)
 - [Markdown vs Latex for Academic Writing](http://jabranham.com/blog/2015/09/rmarkdown-vs-latex/)
 - [Writing Technical Papers with Markdown](http://blog.kdheepak.com/writing-papers-with-markdown.html)
+- [Plain text, Papers, Pandoc](https://kieranhealy.org/blog/archives/2014/01/23/plain-text/)
 
 # Software
 
@@ -94,7 +95,7 @@ Here are some Markdown references online:
 
 Here is a very simple Markdown document:
 
-~~~ {.markdown}
+``` {.markdown}
 # Chapter 1
 
 It was a bright cold day in April, and the clocks were striking
@@ -102,7 +103,7 @@ thirteen. Winston Smith, his chin nuzzled into his breast in an effort
 to escape the vile wind, slipped quickly through the glass doors of
 Victory Mansions, though not quickly enough to prevent a swirl of
 gritty dust from entering along with him.
-~~~
+```
 
 We have a heading, denoted using the `#` symbol, called "Chapter 1", followed by a paragraph of plain text. There are lots of other elements we can denote using Markdown, including things like lists, images, quotes, code listings, and so on. See the documentation for examples.
 
@@ -132,20 +133,20 @@ Let's take the sample Markdown document above (the opening paragraph of George O
 
 First save the document in a plain text file, let's call it `1984.md`. Now let's convert it into HTML format using pandoc:
 
-~~~ {.bash}
+``` {.bash}
 pandoc 1984.md -o 1984.html
-~~~
+```
 
 The file we get looks like this:
 
-~~~ {.html}
+```html
 <h1 id="chapter-1">Chapter 1</h1>
 <p>It was a bright cold day in April, and the clocks were striking
 thirteen. Winston Smith, his chin nuzzled into his breast in an effort
 to escape the vile wind, slipped quickly through the glass doors of
 Victory Mansions, though not quickly enough to prevent a swirl of
 gritty dust from entering along with him.</p>
-~~~
+```
 
 What you can see is that pandoc has basically translated the Markdown semantic codes into the corresponding HTML codes. In fact if you double-click on the `1984.html` file, and open it in a web browser, it will render the html file for you in the browser:
 
@@ -153,7 +154,7 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 
 This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
 
-~~~ {.markdown}
+``` {.markdown}
 # Methods
 
 Participants grasped the handle of an IMT2 two degree of freedom robot
@@ -170,15 +171,15 @@ In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions,
 $F_{x}$ is the applied robot force in the left-right direction,
 $v_{y}$ is hand velocity in the forward-backward direction and $k$=14
 Ns/m.
-~~~
+```
 
 Here we have a heading `# Methods` followed by some text, and then an equation, denoted using `$$` codes to start and then end the equation. The equation is specified using LaTeX syntax. After the final `$$` code that denotes the end of the equation, we have a Markdown code that *labels* the equation using a label of our choice, in this case `forcefield`. What this enables us to do is refer to this equation using the *label*, and let Pandoc figure out the equation numbering. This is great, it means if we have many equations, we don't have to manually number them.
 
 Save the above Markdown text in a plain text file called `robot.md` and let's convert it using pandoc to pdf format.
 
-~~~ {.bash}
+``` {.bash}
 pandoc robot.md --filter pandoc-crossref -o robot.pdf
-~~~
+```
 
 Now open the file `robot.pdf` and you will see something like this:
 
@@ -196,22 +197,22 @@ Let's say you're not too fond of Computer Modern as a font choice. We can change
 
 When Pandoc converts to pdf, it uses LaTeX as an in-between. In fact, Pandoc uses a LaTeX *template* to generate a LaTeX file, which is then converted, using LaTeX, to pdf. You can acutally see what the template looks like by typing:
 
-~~~ {.bash}
+``` {.bash}
 pandoc -D latex > template.latex
-~~~
+```
 
 and then opening the `template.latex` file you just created. It looks crazy if you've never seen LaTeX code before, and probably still looks icky even if you have. Pandoc has inserted a number of *variables* into the LaTeX document that lets you control various aspects of the final pdf output, using command-line arguments to Pandoc.
 
 So for example to change the font to Helvetica, and to use 12pt instead of the default Computer Modern 10pt font, we can issue the Pandoc command like so:
 
-~~~ {.bash}
+``` {.bash}
 pandoc robot.md \
 --filter pandoc-crossref \
 -V mainfont=Helvetica \
 -V fontsize=12pt \
 --latex-engine=xelatex \
 -o robot.pdf
-~~~
+```
 
 Now our document looks like this:
 
@@ -239,7 +240,7 @@ xxx
 
 Here is the command I use to convert this `README.md` document into a pdf file:
 
-~~~ {.bash}
+``` {.bash}
 pandoc README.md \
 -V geometry:margin=1.0in \
 -V mainfont=Helvetica \
@@ -249,7 +250,7 @@ pandoc README.md \
 --latex-engine=xelatex \
 --highlight-style=tango \
 -o README.pdf
-~~~
+```
 
 
 
