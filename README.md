@@ -29,6 +29,8 @@ There are many blog posts out there about the virtues of using plaintext to do s
 
 If you're on MacOS it would be a good idea to install [Homebrew](http://brew.sh), a package manager that gives you easy access to installing all sorts of useful GNU/Linux tools including some of the tools listed here.
 
+## LaTeX 
+
 First let's **install LaTeX**. It's a large download. If you're on a Mac, install LaTeX using the downloadable binary installer. If you're on Ubuntu or another debian-based GNU/Linux, `sudo apt-get install texlive-full`.
 
 - [LaTeX](https://www.latex-project.org)
@@ -36,11 +38,15 @@ First let's **install LaTeX**. It's a large download. If you're on a Mac, instal
   - GNU/Linux: [TeX Live](https://wiki.debian.org/Latex)
   - Windows: [MiKTeX](https://miktex.org)
 
+## Pandoc
+
 Next let's **install pandoc** and some extras. 
 
 If you're on a Mac, and if you've installed homebrew, you can install pandoc using: `brew install pandoc pandoc-citeproc pandoc-crossref`. On GNU/Linux, I'm sure you can figure it out. I think pandoc is available using `sudo apt-get install pandoc` but I'm not sure about pandoc-citeproc and pandoc-crossref. Some googling should bring you an answer.
 
 - [pandoc](http://pandoc.org/installing.html)
+
+## Text Editor
 
 You will need a good **text editor** as well. There are many to choose from. Personally I use Emacs and Sublime Text. For our purposes here we don't need much sophistication so it comes down to personal preference.
 
@@ -93,6 +99,8 @@ Here are some Markdown references online:
 - [Markdown](http://daringfireball.net/projects/markdown/): The original specification by John Gruber
 - [Mastering Markdown](https://guides.github.com/features/mastering-markdown/): a brief tutorial by GitHub
 
+## Simple Markdown Document
+
 Here is a very simple Markdown document:
 
 ``` {.markdown}
@@ -117,6 +125,8 @@ The program we are going to use to perform this conversion is **Pandoc**.
 
 Pandoc is a program that can convert not just from Markdown to a host of other formats, but can convert from multiple formats to multiple formats. The [list of formats](http://pandoc.org) pandoc knows about is long.
 
+## Pandoc Links
+
 Here are some resources for working with pandoc:
 
 - [Getting started with pandoc](http://pandoc.org/getting-started.html)
@@ -130,6 +140,8 @@ Here are some resources for working with pandoc:
 - [Citation Style Language (CSL) citation styles](https://github.com/citation-style-language/styles)
 - [Documentation and Tutorials](https://github.com/jgm/pandoc/wiki/Documentation-and-Tutorials)
 - [User contributed templates](https://github.com/jgm/pandoc/wiki/User-contributed-templates)
+
+## Convert Markdown to .pdf using Pandoc (via LaTeX under the hood)
 
 Let's take the sample Markdown document above (the opening paragraph of George Orwell's "Nineteen Eighty Four") and convert it, using pandoc, to another format.
 
@@ -155,6 +167,8 @@ What you can see is that pandoc has basically translated the Markdown semantic c
 ![1984.html](images/1984.png)
 
 This sample document isn't very interesting, at least it doesn't make use of very many Markdown features. Let's have a look at another example that's closer to what we might be doing as academic writers:
+
+## An Equation
 
 ``` {.markdown}
 # Methods
@@ -222,6 +236,8 @@ Now our document looks like this:
 
 Our font is now Helvetica and the size is 12pt.
 
+## Pandoc Variables for LaTeX
+
 In the Pandoc command above, we use the `-V` flag to tell Pandoc to set a *variable* to a particular value. For example the `mainfont` variable is set to `Helvetica`, and the `fontsize` variable is set to `12pt`.
 
 There is a whole bunch of variables that can be sent to Pandoc in order to control the look of your output, here is the relevant section of the Pandoc documentation:
@@ -232,7 +248,23 @@ Note that when changing the font away from one of the LaTeX standard choices (wh
 
 There are many document-styling variables that you can control directly from the command-line invocation of Pandoc. I suggest looking at the Pandoc documentation and trying things out. In the event you can't do what you need on the command line, you might be able to do it by putting LaTeX commands into a file, and telling Pandoc to load that in as well when doing the conversion (this would be using the `-H` flag). Once you start doing complex things like this though, the question arises, why not just use LaTeX directly.
 
-### Commands in a YAML header
+## The Pandoc Command For This Document
+
+Here is the command I use to convert this `README.md` document into a pdf file:
+
+``` {.bash}
+pandoc README.md \
+-V geometry:margin=1.0in \
+-V mainfont=Helvetica \
+-V monofont=Monaco \
+-V fontsize=12pt \
+-V colorlinks \
+--latex-engine=xelatex \
+--highlight-style=tango \
+-o README.pdf
+```
+
+## Commands & Metadata in a YAML header
 
 ```{.markdown}
 ---
@@ -261,7 +293,6 @@ In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions,
 $F_{x}$ is the applied robot force in the left-right direction,
 $v_{y}$ is hand velocity in the forward-backward direction and $k$=14
 Ns/m.
-
 ```
 
 Here we include, along with the title, author and date, various formatting options in the main document itself.
@@ -277,47 +308,35 @@ Now our document looks like this:
 
 ![robot3.pdf](images/robot3.png)
 
-We include the `--latex-engine=xelatex` option in the pandoc command, because we are asking for a nonstandard font. When converting to pdf, pandoc does this via LaTeX using the `pdflatex` conversion engine as a default. Unfortunately `pdflatex` doesn't handle non-default fonts particularly well (or at least, it's not very flexible). The `xelatex` LaTeX conversion engine handles fonts much more flexibly and allows you to use any font that's installed on your computer. Above I chose `Myriad Pro`.
+## Commands & Metadata in a separate file
 
-### in a separate file
+We can put the formatting stuff into a separate file, called say 'formatting.yaml`:
 
-We can put the formatting stuff into a separate file, called say `formatting.yaml`:
-
-    ---
-    papersize: letter
-    mainfont: "Myriad Pro"
-    fontsize: 12pt
-    geometry: margin=1.2in
-    ---
+```{.markdown}
+---
+papersize: letter
+mainfont: "Helvetica"
+fontsize: 12pt
+geometry: margin=1.2in
+---
+```
 
 and leave the header of our main document for just the content, no formatting:
 
-    ---
-    title: Hunting Replicants
-    author: Rick Deckard
-    date: November 1, 2019
-    ---
+```{.markdown}
+---
+title: Hunting Replicants
+author: Rick Deckard
+date: November 1, 2019
+---
+```
 
-The advantage of this is we really do separate out content from formatting. Now the command to convert from `ms.md` to pdf would be:
+The advantage of this is we really do separate out content from formatting. Now the command to convert from `robot.md` to pdf would be:
 
-    pandoc ms.md -o ms.pdf formatting.yaml --latex-engine=xelatex
+    pandoc robot.md -o robot.pdf formatting.yaml --latex-engine=xelatex
 
 We include `formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
 
-
-As an example, here is the command I use to convert this `README.md` document into a pdf file:
-
-``` {.bash}
-pandoc README.md \
--V geometry:margin=1.0in \
--V mainfont=Helvetica \
--V monofont=Monaco \
--V fontsize=12pt \
--V colorlinks \
---latex-engine=xelatex \
---highlight-style=tango \
--o README.pdf
-```
 
 
 # LaTeX
