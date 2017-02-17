@@ -213,7 +213,7 @@ pandoc robot.md \
 -V mainfont=Helvetica \
 -V fontsize=12pt \
 --latex-engine=xelatex \
--o robot.pdf
+-o robot2.pdf
 ```
 
 Now our document looks like this:
@@ -230,104 +230,52 @@ There is a whole bunch of variables that can be sent to Pandoc in order to contr
 
 Note that when changing the font away from one of the LaTeX standard choices (which are few, and arguably ugly), we have to tell Pandoc to use the `xelatex` engine instead of the standard LaTeX engine, to generate the pdf file. This is done with the command-line flag `--latex-engine=xelatex`. The standard LaTeX engine for generating a pdf is called `pdflatex` but it doesn't handle non-default fonts well. The `xelatex` engine does, so any time we want to change font away from the LaTeX defaults, I would suggest using this `--latex-engine=xelatex` flag. The `xelatex` engine allows you to use any font that's installed on your system.
 
-xxx
+There are many document-styling variables that you can control directly from the command-line invocation of Pandoc. I suggest looking at the Pandoc documentation and trying things out. In the event you can't do what you need on the command line, you might be able to do it by putting LaTeX commands into a file, and telling Pandoc to load that in as well when doing the conversion (this would be using the `-H` flag). Once you start doing complex things like this though, the question arises, why not just use LaTeX directly.
 
-other document changes (margin, etc, check out the variables list)
+### Commands in a YAML header
 
-xxx
+```{.markdown}
+---
+title: Hunting Replicants
+author: Rick Deckard
+date: November 1, 2019
+papersize: letter
+mainfont: "Helvetica"
+fontsize: 12pt
+geometry: margin=1.2in
+---
 
-Makefile
+# Methods
 
-xxx
+Participants grasped the handle of an IMT2 two degree of freedom robot
+(InMotion Technologies Inc.) as they reached from a start position to
+a movement target, located 20 cm away. The robot applied a
+velocity-dependent force to the hand during movement, according to
+[@eq:forcefield].
 
-Here is the command I use to convert this `README.md` document into a pdf file:
+$$
+    F_{x} = k \left[ v_{y} \right]
+$$ {#eq:forcefield}
 
-``` {.bash}
-pandoc README.md \
--V geometry:margin=1.0in \
--V mainfont=Helvetica \
--V monofont=Monaco \
--V fontsize=12pt \
--V colorlinks \
---latex-engine=xelatex \
---highlight-style=tango \
--o README.pdf
+In [@eq:forcefield], $x$ and $y$ are lateral and sagittal directions,
+$F_{x}$ is the applied robot force in the left-right direction,
+$v_{y}$ is hand velocity in the forward-backward direction and $k$=14
+Ns/m.
+
 ```
 
+Here we include, along with the title, author and date, various formatting options in the main document itself.
 
+``` {.bash}
+pandoc robot.md \
+--filter pandoc-crossref \
+--latex-engine=xelatex \
+-o robot3.pdf
+```
 
+Now our document looks like this:
 
-
-# LaTeX
-
-- [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
-
-# Markdown vs LaTeX
-
-- Markdown has arguably nicer looking syntax
-- Markdown has more output formats (via pandoc)
-- LaTeX provides more control over fine-grained appearance
-
-With pandoc you can take advantage of both. Provide pandoc with a
-LaTeX template, containing all of the formatting details you want, and
-keep the content in Markdown format.
-
-
-# Writing in Markdown
-
-## Using Pandoc to create a pdf
-
-[variables for LaTeX](http://pandoc.org/MANUAL.html#variables-for-latex)
-
-Some examples:
-
-Basic document creation with all of the LaTeX defaults:
-
-	pandoc doc1.md -o doc1.pdf
-
-Let's make the sections and subsections numbered:
-
-	pandoc doc1.md -o doc1.pdf -N
-
-Let's change the font to 12pt
-
-	pandoc doc1.md -o doc1.pdf -N --variable fontsize=12pt
-
-Let's change the font to Palatino (the default LaTeX font is called
-Computer Modern):
-
-	pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
-    mainfont=Palatino --latex-engine=xelatex
-
-The page margins are to small for us, let's make them 1-inch all around:
-
-	pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
-    mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1in
-
-## Where to put the formatting codes?
-
-### on the command line
-
-  pandoc doc1.md -o doc1.pdf -N -V fontsize=12pt -V
-    mainfont=Palatino --latex-engine=xelatex -V geometry:margin=1in
-
-Above we put various formatting codes (font, margins, etc) in the command-line command to run pandoc. There are other ways to do it.
-
-### in a YAML header in the main document
-
-    ---
-    title: Hunting Replicants
-    author: Rick Deckard
-    date: November 1, 2019
-    papersize: letter
-    mainfont: "Myriad Pro"
-    fontsize: 12pt
-    geometry: margin=1.2in
-    ---
-
-Here we include, along with the title, author and date, various formatting options in the main document itself. Now to convert the plaintext document `ms.md` to pdf we can issue a simpler command:
-
-    pandoc ms.md -o ms.pdf --latex-engine=xelatex
+![robot3.pdf](images/robot3.png)
 
 We include the `--latex-engine=xelatex` option in the pandoc command, because we are asking for a nonstandard font. When converting to pdf, pandoc does this via LaTeX using the `pdflatex` conversion engine as a default. Unfortunately `pdflatex` doesn't handle non-default fonts particularly well (or at least, it's not very flexible). The `xelatex` LaTeX conversion engine handles fonts much more flexibly and allows you to use any font that's installed on your computer. Above I chose `Myriad Pro`.
 
@@ -355,6 +303,43 @@ The advantage of this is we really do separate out content from formatting. Now 
     pandoc ms.md -o ms.pdf formatting.yaml --latex-engine=xelatex
 
 We include `formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
+
+
+As an example, here is the command I use to convert this `README.md` document into a pdf file:
+
+``` {.bash}
+pandoc README.md \
+-V geometry:margin=1.0in \
+-V mainfont=Helvetica \
+-V monofont=Monaco \
+-V fontsize=12pt \
+-V colorlinks \
+--latex-engine=xelatex \
+--highlight-style=tango \
+-o README.pdf
+```
+
+
+# LaTeX
+
+- [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
+
+xxx
+
+
+# Markdown vs LaTeX
+
+- Markdown has arguably nicer looking syntax
+- Markdown has more output formats (via pandoc)
+- LaTeX provides more control over fine-grained appearance
+
+With pandoc you can take advantage of both. Provide pandoc with a
+LaTeX template, containing all of the formatting details you want, and
+keep the content in Markdown format.
+
+
+
+
 
 
 

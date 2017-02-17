@@ -1,3 +1,13 @@
+---
+title: Hunting Replicants
+author: Rick Deckard
+date: November 1, 2019
+papersize: letter
+mainfont: "Helvetica"
+fontsize: 12pt
+geometry: margin=1.2in
+---
+
 # Methods
 
 Participants grasped the handle of an IMT2 two degree of freedom robot (InMotion Technologies Inc.) as they reached from a start position to a movement target, located 20 cm away. The robot applied a velocity-dependent force to the hand during movement, according to [@eq:forcefield].
