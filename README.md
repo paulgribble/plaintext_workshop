@@ -337,6 +337,9 @@ The advantage of this is we really do separate out content from formatting. Now 
 
 We include `formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
 
+## Citations & Bibliographies
+
+xxx
 
 
 # LaTeX
@@ -629,6 +632,11 @@ And then issue the following command to compile the `.tex` file into a .pdf:
 xelatex robot_tex.tex
 ```
 
+## Citations & Bibliographies
+
+xxx
+
+- http://gabrielelanaro.github.io/blog/2014/12/01/latex-bibliography-in-5-minutes.html
 
 
 
