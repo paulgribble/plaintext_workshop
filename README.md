@@ -396,22 +396,240 @@ after Bryant ambiguously threatens him, he reluctantly agrees.
 \end{document}
 ```
 
-xxx
+To compile this LaTeX document into a pdf we can issue the following command:
 
-Here is what the .pdf file looks like:
+```{.bash}
+pdflatex myarticle.tex
+```
+
+A bunch of strange looking log messages get spit out:
+
+```{.bash}
+fuji:plaintext_workshop plg$ pdflatex myarticle.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./myarticle.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo))
+No file myarticle.aux.
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./myarticle.aux) )</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb>
+Output written on myarticle.pdf (1 page, 77054 bytes).
+Transcript written on myarticle.log.
+```
+
+Now there is a file called `myarticle.pdf`. Here is what the .pdf file looks like:
 
 ![myarticle.pdf](images/myarticle.png)
 
-xxx
+In the case where the LaTeX processor didn't like something, for example if you mis-spelled a LaTeX command, or some other error occurred, you would see an error reported in the log output, and the .pdf file will probably not be generated.
+
+## Equations
+
+Here is the Markdown article `robot.md` from above, written in LaTeX (let's call it `robot_tex.tex`):
+
+```{.tex}
+\documentclass{article}
+
+\title{Hunting Replicants}
+\author{Rick Deckard}
+\date{November 1, 2019}
+
+\begin{document}
+
+\maketitle
+
+\section*{Methods}
+
+Participants grasped the handle of an IMT2 two degree of freedom robot (InMotion Technologies Inc.) as they reached from a start position to a movement target, located 20 cm away. The robot applied a velocity-dependent force to the hand during movement, according to Equation \ref{eq:forcefield}.
+
+\begin{equation}
+    F_{x} = k \left[ v_{y} \right]
+\label{eq:forcefield}
+\end{equation}
+
+In Equation \ref{eq:forcefield}, $x$ and $y$ are lateral and sagittal directions, $F_{x}$ is the applied robot force in the left-right direction, $v_{y}$ is hand velocity in the forward-backward direction and $k$=14 Ns/m.
+
+\end{document}
+```
+
+Now we issue the command `pdflatex robot_tex.tex` and we get the following output:
+
+```{.bash}
+fuji:plaintext_workshop plg$ pdflatex robot_tex.tex
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./robot_tex.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo)) (./robot_tex.aux)
+
+LaTeX Warning: Reference `eq:forcefield' on page 1 undefined on input line 13.
+
+
+LaTeX Warning: Reference `eq:forcefield' on page 1 undefined on input line 20.
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./robot_tex.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on robot_tex.pdf (1 page, 71769 bytes).
+Transcript written on robot_tex.log.
+```
+
+Note how in the output we are told: `LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.`. This is because LaTeX needs to process the file a second time, to get the numbering right for the equation(s). So we issue the command a second time, `pdflatex robot_tex.tex`:
+
+```{.bash}
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./robot_tex.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo)) (./robot_tex.aux)
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./robot.aux) )</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb>
+Output written on robot_tex.pdf (1 page, 62912 bytes).
+Transcript written on robot_tex.log.
+```
+
+This time we get no warnings or errors, and there is a .pdf file called `robot_tex.pdf`:
+
+![robot_tex.pdf](images/robot_tex.png)
+
+## Styling a LaTeX Document
+
+There are many aspects of the style we may want to adjust, including things like:
+
+- page margins
+- paragraph indentation
+- paragraph spacing
+- line spacing
+- fonts
+- section heading spacing & font
+
+### Page Margin
+
+The easiest way to do this is to use the `geometry` package. To use LaTeX packages (which are add-ons that provide additional functionality) we issue the `\usepackage{}` command, in the document preamble, i.e. before the `\begin{document}` command:
+
+```{.tex}
+\documentclass{article}
+
+\title{Hunting Replicants}
+\author{Rick Deckard}
+\date{November 1, 2019}
+
+\usepackage[margin=1.2in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+\section*{Methods}
+
+Participants grasped the handle of an IMT2 two degree of freedom robot (InMotion Technologies Inc.) as they reached from a start position to a movement target, located 20 cm away. The robot applied a velocity-dependent force to the hand during movement, according to Equation \ref{eq:forcefield}.
+
+\begin{equation}
+    F_{x} = k \left[ v_{y} \right]
+\label{eq:forcefield}
+\end{equation}
+
+In Equation \ref{eq:forcefield}, $x$ and $y$ are lateral and sagittal directions, $F_{x}$ is the applied robot force in the left-right direction, $v_{y}$ is hand velocity in the forward-backward direction and $k$=14 Ns/m.
+
+\end{document}
+```
+
+We now get a document that looks like this:
+
+![robot_tex2.pdf](images/robot_tex2.png)
+
+## Paragraph indentation & spacing
+
+The default LaTeX style is such that paragraphs don't have extra spacing in between them, and the first line of a paragraph is indented (except for the first paragraph in a section). Let's say instead we wanted a space in between paragraphs, and no indentation. We could issue the following two commands in the preamble:
+
+```{.tex}
+\setlength{\parskip}{1ex}            % space between paragraphs
+\setlength{\parindent}{0ex}          % paragraph indentation
+```
+
+In LaTeX  `1.0ex` is a vertical space roughly equal to the vertical height of the font being used.
+
+## Line spacing
+
+We can use `linespread` and issue the following command in the preamble, to get double-spacing:
+
+```{.tex}
+\linespread{2}
+```
 
 
 ## Fonts in LaTeX
 
-- [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
-- [Fontspec](https://www.ctan.org/pkg/fontspec?lang=en) (for XeLaTeX)
-- 
+### Built-in LaTeX Fonts
 
-xxx
+We have two choices in LaTeX for handling fonts. The default way is to use `pdflatex` to do the conversion from a `.tex` file to a `.pdf` file (the way we've been doing it so far). In this case we are restricted to using one or more of the built-in fonts in LaTeX. We can see them all, and the commands to activate them, here:
+
+- [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
+
+So for example to change to [Garamond](http://www.tug.dk/FontCatalogue/garamond/) font we could issue the following command in the preamble:
+
+```{.tex}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage[T1]{fontenc}
+```
+
+### Use Any Font
+
+There is also a way to use any font we want (well, any font that's installed on our computer). We use the `fontspec` package, and we use `xelatex` instead of `pdflatex` to compile the `.tex` file into a .pdf file.
+
+- [Fontspec](https://www.ctan.org/pkg/fontspec?lang=en) (for XeLaTeX)
+
+So for example to use the font `Helvetica Neue` (which I have installed on my Mac), we would issue this command in the preamble:
+
+```{.tex}
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue}
+```
+
+And then issue the following command to compile the `.tex` file into a .pdf:
+
+```{.bash}
+xelatex robot_tex.tex
+```
+
+
 
 
 # Markdown vs LaTeX
