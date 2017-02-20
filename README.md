@@ -690,7 +690,9 @@ Here's an example of a simple document that uses one of the default styles, let'
 
 \maketitle
 
-Here is a sentence and an example of a citation to an article \cite{mattar:2005aa}. Here are two citations to articles \cite{mattar:2005aa; mcgregor:2016aa}
+Here is a sentence and an example of a citation 
+to an article \cite{mattar:2005aa}. Here are two 
+citations to articles \cite{mattar:2005aa, mcgregor:2016aa}
 
 \bibliographystyle{unsrt} 
 \bibliography{refs}
