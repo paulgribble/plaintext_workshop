@@ -780,7 +780,7 @@ Here is a reference to an article \citep{mattar:2005aa}.
 \end{document}
 ```
 
-We have used the `lipsum` package here to generate some placeholder text.
+We have used the `lipsum` package here to generate some placeholder text. We have also used the `titlesec` package to define custom styles for section headings.
 
 Here is what the article looks like:
 
