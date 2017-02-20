@@ -719,6 +719,73 @@ Here is what the document looks like:
 
 ### The natbib package
 
+For some more flexibility in how to cite, you can use the `natbib` package. Here is a small example of using natbib, along with a bibliography style for Journal of Neuroscience, called `jneurosci`, let's call it `myarticle3.tex`:
+
+```{.tex}
+\documentclass[]{article}
+
+% use xelatex!
+\usepackage{fontspec}
+\usepackage{microtype} % Better typography
+\usepackage{mathpazo} % for palatino math
+\setmainfont{Lyon Text}
+\setsansfont{Helvetica Neue}
+
+\usepackage[margin=1.0in]{geometry}
+
+\usepackage{titlesec}
+\titleformat*{\section}{\bfseries\sffamily\large}
+\titleformat*{\subsection}{\bfseries\sffamily\normalsize}
+
+\usepackage{natbib}
+
+\usepackage{lipsum}
+
+\title{The Answers to Important Questions}
+\author{Jane Smith, Ph.D.}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus
+elit, vestibulum ut, placerat ac, adipiscing vitae,
+felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy
+eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu
+neque. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra
+metus rhoncus sem. Nulla et lectus vestibulum urna fringilla
+ultrices. Phasellus eu tellus sit amet tortor gravida
+placerat. Integer sapien est, iaculis in, pretium quis, viverra
+ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean
+faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac,
+nulla. Curabitur auctor semper nulla. Donec varius orci eget
+risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis,
+diam. Duis eget orci sit.
+
+\section*{Introduction}
+
+\lipsum[1]
+
+Here is a reference to an article \citep{mattar:2005aa}.
+
+\lipsum[2-3]
+
+\bibliography{refs}
+\bibliographystyle{jneurosci}
+
+\end{document}
+```
+
+We have used the `lipsum` package here to generate some placeholder text.
+
+Here is what the article looks like:
+
+![myarticle3.pdf](images/myarticle3.png)
+
 - [using natbib](http://merkel.texture.rocks/Latex/natbib.php)
 
 ### Create your own bibliography style file
