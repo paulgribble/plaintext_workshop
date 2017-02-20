@@ -722,7 +722,7 @@ Here is what the document looks like:
 For some more flexibility in how to cite, you can use the `natbib` package. Here is a small example of using natbib, along with a bibliography style for Journal of Neuroscience, called `jneurosci`, let's call it `myarticle3.tex`:
 
 ```{.tex}
-\documentclass[]{article}
+\documentclass[11pt]{article}
 
 % use xelatex!
 \usepackage{fontspec}
