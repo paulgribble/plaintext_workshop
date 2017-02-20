@@ -341,7 +341,58 @@ We include `formatting.yaml` to tell pandoc to include the header info found in 
 
 # LaTeX
 
+LaTeX is a document typesetting system that is generally used to create .pdf files. It is very powerful and can be used to create all sorts of documents including papers/essays, letters, books, business cards, flyers, presentation slides, etc. It's not difficult to create documents using the default LaTeX styles. Once you want to customize the look of your document, things get a bit more difficult, but only because you won't know what LaTeX commands to use. Fortunately there are a *lot* of resources to help online, and you can typically search using Google for how to do something, and find a reasonable answer within the first few hits. Here are some LaTeX tutorials online:
+
+- [LaTeX on WikiBooks](https://en.wikibooks.org/wiki/LaTeX)
+- [Introduction to LaTeX](https://www.overleaf.com/latex/learn/free-online-introduction-to-latex-part-1)
+- [LaTeX Tutorial](https://www.latex-tutorial.com/tutorials/)
+- [Beginners LaTeX Tutorial](https://www.sharelatex.com/blog/latex-guides/beginners-tutorial.html)
+
+
+## A Basic LaTeX Article
+
+LaTeX has a number of default [document classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes) to choose from when creating a document. These include `article`, `report`, `book`, `letter`, `beamer` (for slides), etc. Typically I use `article` for writing papers and most short documents. For my notes for my graduate course, [Scientific Computing with MATLAB](http://www.gribblelab.org/scicomp/), I used the `book` class (see [here](https://github.com/paulgribble/SciComp/blob/master/scicomp.tex)).
+
+Let's use the `article` class and write a simple article with a title, an author, a date, an Abstract, and a couple of paragraphs of text. Save this as a file called `myarticle.tex`:
+
+```{.tex}
+\documentclass{article}
+
+\title{Hunting Replicants}
+\author{Rick Deckard}
+\date{November 1, 2019}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Blade Runner is a 1982 American neo-noir science fiction film directed by Ridley Scott, and starring Harrison Ford, Rutger Hauer, Sean Young, and Edward James Olmos. The film, written by Hampton Fancher and David Peoples, is an adaptation of the 1968 novel Do Androids Dream of Electric Sheep? by Philip K. Dick.
+\end{abstract}
+
+\section*{Introduction}
+
+In Los Angeles in November 2019, ex-police officer Rick Deckard is detained by officer Gaff and brought to his former supervisor, Bryant. Deckard, whose job as a "Blade Runner" was to track down bioengineered beings known as replicants and "retire" (a euphemism for killing) them, is informed that four have come to Earth illegally. As Tyrell Corporation Nexus-6 models, they have only a four-year lifespan and may have come to Earth to try to extend their lives.
+
+Deckard watches a video of a Blade Runner named Holden administering the "Voight-Kampff" test designed to distinguish replicants from humans based on their emotional response to questions. The test subject, Leon, shoots Holden after Holden asks about Leon's mother. Bryant wants Deckard to retire Leon and the other three replicants: Roy Batty, Zhora, and Pris. Deckard initially refuses, but after Bryant ambiguously threatens him, he reluctantly agrees.
+
+\end{document}
+```
+
+xxx
+
+Here is what the .pdf file looks like:
+
+![myarticle.pdf](images/myarticle.png)
+
+xxx
+
+
+## Fonts in LaTeX
+
 - [LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/)
+- [Fontspec](https://www.ctan.org/pkg/fontspec?lang=en) (for XeLaTeX)
+- 
 
 xxx
 
