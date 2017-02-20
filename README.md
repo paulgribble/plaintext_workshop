@@ -372,9 +372,9 @@ Blade Runner is a 1982 American neo-noir science fiction film directed by Ridley
 
 \section*{Introduction}
 
-In Los Angeles in November 2019, ex-police officer Rick Deckard is detained by officer Gaff and brought to his former supervisor, Bryant. Deckard, whose job as a "Blade Runner" was to track down bioengineered beings known as replicants and "retire" (a euphemism for killing) them, is informed that four have come to Earth illegally. As Tyrell Corporation Nexus-6 models, they have only a four-year lifespan and may have come to Earth to try to extend their lives.
+In Los Angeles in November 2019, ex-police officer Rick Deckard is detained by officer Gaff and brought to his former supervisor, Bryant. Deckard, whose job as a ``Blade Runner'' was to track down bioengineered beings known as replicants and ``retire'' (a euphemism for killing) them, is informed that four have come to Earth illegally. As Tyrell Corporation Nexus-6 models, they have only a four-year lifespan and may have come to Earth to try to extend their lives.
 
-Deckard watches a video of a Blade Runner named Holden administering the "Voight-Kampff" test designed to distinguish replicants from humans based on their emotional response to questions. The test subject, Leon, shoots Holden after Holden asks about Leon's mother. Bryant wants Deckard to retire Leon and the other three replicants: Roy Batty, Zhora, and Pris. Deckard initially refuses, but after Bryant ambiguously threatens him, he reluctantly agrees.
+Deckard watches a video of a Blade Runner named Holden administering the ``Voight-Kampff'' test designed to distinguish replicants from humans based on their emotional response to questions. The test subject, Leon, shoots Holden after Holden asks about Leon's mother. Bryant wants Deckard to retire Leon and the other three replicants: Roy Batty, Zhora, and Pris. Deckard initially refuses, but after Bryant ambiguously threatens him, he reluctantly agrees.
 
 \end{document}
 ```
