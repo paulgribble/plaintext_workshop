@@ -399,6 +399,12 @@ after Bryant ambiguously threatens him, he reluctantly agrees.
 \end{document}
 ```
 
+Note how quotation marks in LaTeX are left & right specific. That is, we use double single-left-quotes for left-quotation marks, and double single-right-quotes for right-quotation marks:
+
+```{.tex}
+We quote like ``this'' and not like "this"
+```
+
 To compile this LaTeX document into a pdf we can issue the following command:
 
 ```{.bash}
@@ -634,9 +640,96 @@ xelatex robot_tex.tex
 
 ## Citations & Bibliographies
 
-xxx
+As with many things in LaTeX, there are some [built-in bibliography styles](https://www.sharelatex.com/learn/Bibtex%20bibliography%20styles#/Biblatex_styles), but you can also find third-party style files that define other bibliography styles, and you can also create your own style file if you can't find an existing bibliography style file.
 
-- http://gabrielelanaro.github.io/blog/2014/12/01/latex-bibliography-in-5-minutes.html
+Typically, information about the articles you are going to cite in a LaTeX document (the database of bibliography entries) is stored in a format called BibTeX, in a file with a `.bib` suffix. This is also a plain-text document. Here is an example of a small simple `.bib` file, called `refs.bib`:
+
+```{.tex}
+@Article{   mattar:2005aa,
+  author  = {Mattar, Andrew A G and Gribble, Paul L},
+  doi   = {10.1016/j.neuron.2005.02.009},
+  journal = {Neuron},
+  number  = {1},
+  pages   = {153-60},
+  pmid    = {15820701},
+  title   = {Motor learning by observing},
+  volume  = {46},
+  year    = {2005}
+}
+
+@Article{     mcgregor:2016aa,
+  author    = {McGregor, Heather R and Cashaback,
+    Joshua G A and Gribble, Paul L},
+  doi       = {10.1016/j.cub.2016.01.064},
+  journal   = {Curr Biol},
+  number    = {7},
+  pages     = {921-7},
+  pmid      = {26972317},
+  title     = {Functional Plasticity in Somatosensory Cortex
+    Supports Motor Learning by Observing},
+  volume    = {26},
+  year      = {2016}
+}
+```
+
+Each entry has the usual fields (and others are possible but not shown here), and importantly, each entry has a unique **keyword** that is the way we will refer to each entry, within our LaTeX document. This is how we will cite articles/books.
+
+Many popular bibliography database programs, like Endnote, Zotero, Mendelay, Papers.app, etc, can export a database or a selection of articles in `.bib` format. Also, PubMed and Google Scholar can directly export entries as a `.bib` file.
+
+To cite an entry in our bibliography, we use the `\cite` command.
+
+Here's an example of a simple document that uses one of the default styles, let's call this file `myarticle2.tex`
+
+```{.tex}
+\documentclass{article}
+
+\title{Hunting Replicants}
+\author{Rick Deckard}
+
+\begin{document}
+
+\maketitle
+
+Here is a sentence and an example of a citation to an article \cite{mattar:2005aa}. Here are two citations to articles \cite{mattar:2005aa; mcgregor:2016aa}
+
+\bibliographystyle{unsrt} 
+\bibliography{refs}
+
+\end{document}
+```
+
+We use the `\bibliographystyle` command to tell LaTeX which citation and bibliography style to use, and we use the `\bibliography` command to tell LaTeX which file to use to look for the references we are citing.
+
+To compile the article we need to issue a series of commands:
+
+```{.bash}
+pdflatex myarticle2
+bibtex myarticle2
+pdflatex myarticle2
+pdflatex myarticle2
+```
+
+Here is what the document looks like:
+
+![myarticle2.pdf](images/myarticle2.png)
+
+- [LaTeX & BiBTeX style files for biology](https://schneider.ncifcrf.gov/latex.html) (and other sciences)
+
+### The natbib package
+
+- [using natbib](http://merkel.texture.rocks/Latex/natbib.php)
+
+### Create your own bibliography style file
+
+You can use the `makebst` utility to make your own bibliography style file. Issue the following command:
+
+```{.bash}
+latex makebst
+```
+
+and the `makebst` program will ask you a series of questions. At the end of the process you will have a `.bst` file that you can refer to in your `.tex` file, to use as a bibliography style.
+
+- [Write your custom latex bibliography style in 5 minutes](http://gabrielelanaro.github.io/blog/2014/12/01/latex-bibliography-in-5-minutes.html)
 
 
 
