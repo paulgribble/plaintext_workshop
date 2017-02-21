@@ -9,6 +9,6 @@ csl: the-journal-of-neuroscience.csl
 
 Here is a sentence with a citation at the end [@mattar:2005aa].
 Here is another sentence with another set of
-citations [@mattar:2005aa; mcgregor:2016aa].
+citations [@mattar:2005aa; @mcgregor:2016aa].
 
 # References
