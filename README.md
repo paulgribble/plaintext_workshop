@@ -339,7 +339,79 @@ We include `formatting.yaml` to tell pandoc to include the header info found in 
 
 ## Citations & Bibliographies
 
-xxx
+For citations and bibliography entries, Pandoc uses LaTeX and the associated bibliography tool called BiBTeX. Bibliographic entries are stored in a format called `.bib` which is a plain text format that looks like this:
+
+```{.tex}
+@Article{   mattar:2005aa,
+  author  = {Mattar, Andrew A G and Gribble, Paul L},
+  doi   = {10.1016/j.neuron.2005.02.009},
+  journal = {Neuron},
+  number  = {1},
+  pages   = {153-60},
+  pmid    = {15820701},
+  title   = {Motor learning by observing},
+  volume  = {46},
+  year    = {2005}
+}
+
+@Article{     mcgregor:2016aa,
+  author    = {McGregor, Heather R and Cashaback,
+    Joshua G A and Gribble, Paul L},
+  doi       = {10.1016/j.cub.2016.01.064},
+  journal   = {Curr Biol},
+  number    = {7},
+  pages     = {921-7},
+  pmid      = {26972317},
+  title     = {Functional Plasticity in Somatosensory Cortex
+    Supports Motor Learning by Observing},
+  volume    = {26},
+  year      = {2016}
+}
+```
+
+Let's say the above file is called `refs.bib`. Then within our Markdown document, for example in the YAML header, we say what the name of the bibliography file is:
+
+```{.markdown}
+---
+title: My Great Paper
+author: Me
+bibliography: refs.bib
+csl: the-journal-of-neuroscience.csl
+---
+```
+
+Note also that we include a line specifying a `.csl` file---this is a file that indicates what format the citations & bibliography should be in. You can download one of these from their github repository: [citation-style-language/styles](https://github.com/citation-style-language/styles).
+
+Now within our Markdown document we can cite using the unique **keyword** that's associated with each article in our `.bib` file. For example:
+
+```{.markdown}
+---
+title: My Great Article
+author: Me
+bibliography: refs.bib
+csl: the-journal-of-neuroscience.csl
+---
+
+# Introduction
+
+Here is a sentence with a citation at the end [@mattar:2005aa].
+Here is another sentence with another set of
+citations [@mattar:2005aa; mcgregor:2016aa].
+
+# References
+
+```
+
+Let's call the above file `myarticle_citations.md`. Then we can compile this to .pdf using the following command:
+
+```{.bash}
+pandoc -o myarticle_citations.pdf myarticle_citations.md \
+--filter pandoc-citeproc
+```
+
+We use the `--filter pandoc-citeproc` argument to handle the references. Then we get a document that looks like this:
+
+![myarticle_citations.pdf](images/myarticle_citations.png)
 
 
 # LaTeX
