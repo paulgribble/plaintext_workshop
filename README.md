@@ -257,7 +257,7 @@ pandoc README.md \
 -V geometry:margin=1.0in \
 -V mainfont=Helvetica \
 -V monofont=Monaco \
--V fontsize=12pt \
+-V fontsize=10pt \
 -V colorlinks \
 --pdf-engine=xelatex \
 --highlight-style=tango \
