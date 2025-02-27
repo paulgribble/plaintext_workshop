@@ -226,7 +226,7 @@ pandoc robot.md \
 --filter pandoc-crossref \
 -V mainfont=Helvetica \
 -V fontsize=12pt \
---latex-engine=xelatex \
+--pdf-engine=xelatex \
 -o robot2.pdf
 ```
 
@@ -244,7 +244,7 @@ There is a whole bunch of variables that can be sent to Pandoc in order to contr
 
 [Pandoc variables for LaTeX](http://pandoc.org/MANUAL.html#variables-for-latex)
 
-Note that when changing the font away from one of the LaTeX standard choices (which are few, and arguably ugly), we have to tell Pandoc to use the `xelatex` engine instead of the standard LaTeX engine, to generate the pdf file. This is done with the command-line flag `--latex-engine=xelatex`. The standard LaTeX engine for generating a pdf is called `pdflatex` but it doesn't handle non-default fonts well. The `xelatex` engine does, so any time we want to change font away from the LaTeX defaults, I would suggest using this `--latex-engine=xelatex` flag. The `xelatex` engine allows you to use any font that's installed on your system.
+Note that when changing the font away from one of the LaTeX standard choices (which are few, and arguably ugly), we have to tell Pandoc to use the `xelatex` engine instead of the standard LaTeX engine, to generate the pdf file. This is done with the command-line flag `--pdf-engine=xelatex`. The standard LaTeX engine for generating a pdf is called `pdflatex` but it doesn't handle non-default fonts well. The `xelatex` engine does, so any time we want to change font away from the LaTeX defaults, I would suggest using this `--pdf-engine=xelatex` flag. The `xelatex` engine allows you to use any font that's installed on your system.
 
 There are many document-styling variables that you can control directly from the command-line invocation of Pandoc. I suggest looking at the Pandoc documentation and trying things out. In the event you can't do what you need on the command line, you might be able to do it by putting LaTeX commands into a file, and telling Pandoc to load that in as well when doing the conversion (this would be using the `-H` flag). Once you start doing complex things like this though, the question arises, why not just use LaTeX directly.
 
@@ -259,7 +259,7 @@ pandoc README.md \
 -V monofont=Monaco \
 -V fontsize=12pt \
 -V colorlinks \
---latex-engine=xelatex \
+--pdf-engine=xelatex \
 --highlight-style=tango \
 -o README.pdf
 ```
@@ -300,7 +300,7 @@ Here we include, along with the title, author and date, various formatting optio
 ``` {.bash}
 pandoc robot.md \
 --filter pandoc-crossref \
---latex-engine=xelatex \
+--pdf-engine=xelatex \
 -o robot3.pdf
 ```
 
@@ -333,7 +333,7 @@ date: November 1, 2019
 
 The advantage of this is we really do separate out content from formatting. Now the command to convert from `robot.md` to pdf would be:
 
-    pandoc robot.md -o robot.pdf formatting.yaml --latex-engine=xelatex
+    pandoc robot.md -o robot.pdf formatting.yaml --pdf-engine=xelatex
 
 We include `formatting.yaml` to tell pandoc to include the header info found in the file `formatting.yaml` when performing the conversion.
 
